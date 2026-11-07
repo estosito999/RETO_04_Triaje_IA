@@ -1,0 +1,31 @@
+{
+  "reto": "RETO_04_Triaje_IA",
+  "fecha_utc": "2026-11-07T03:52:36+00:00",
+  "python": "C:\\Users\\duico\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+  "dependencias": {
+    "correcto": true,
+    "codigo": 0,
+    "segundos": 0.76
+  },
+  "pytest": {
+    "correcto": true,
+    "codigo": 0,
+    "segundos": 4.46,
+    "pruebas_aprobadas": 29
+  },
+  "experimentos": {
+    "correcto": true,
+    "codigo": 0,
+    "segundos": 1.33
+  },
+  "servidor": {
+    "correcto": true,
+    "puerto": 52740,
+    "http": {
+      "/_stcore/health": 200,
+      "/": 200
+    }
+  },
+  "copia_aislada": true,
+  "correcto": true
+}

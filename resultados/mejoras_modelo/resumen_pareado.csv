@@ -1,0 +1,673 @@
+﻿escenario,condicion,metrica,repeticiones,pares_validos,pares_faltantes,diferencia_media,desviacion_diferencias,error_estandar,ic95_inferior,ic95_superior
+Turno habitual,Conexión del escenario,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,pacientes_atendidos,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,consultas_iniciadas,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,pacientes_sin_iniciar_consulta,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión del escenario,pacientes_sin_completar,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión del escenario,atendidos_pct,3,3,0,-0.3703703703703667,1.6972502573910488,0.9799078929868837,-4.586573741033425,3.845833000292692
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_min,3,3,0,-1.2245555550068932,1.7894151571492656,1.0331193226721251,-5.669709228859028,3.220598118845241
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_p90_min,3,3,0,17.62380731469511,9.78287420614173,5.648145056364175,-6.678199430091137,41.925814059481354
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_p95_min,3,3,0,17.188612903129137,6.872187308960405,3.96765919274982,0.11715324672857719,34.260072559529696
+Turno habitual,Conexión del escenario,muestra_esperas_iniciadas,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_min,3,3,0,0.10828955540911878,0.6620492040611942,0.38223428618150795,-1.5363318394335834,1.752910950251821
+Turno habitual,Conexión del escenario,espera_acumulada_total_min,3,3,0,9.74605998682076,59.584428365507684,34.40108575633584,-138.26986554902297,157.7619855226645
+Turno habitual,Conexión del escenario,espera_medica_acumulada_min,3,3,0,0.10828955540911996,0.6620492040611923,0.38223428618150684,-1.5363318394335777,1.7529109502518174
+Turno habitual,Conexión del escenario,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,carga_medicos_pct,3,3,0,-0.11023609230061027,0.096514026482363,0.05572239917016695,-0.34999022519831824,0.1295180405970977
+Turno habitual,Conexión del escenario,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,concordancia_pct,3,0,3,,,,,
+Turno habitual,Conexión del escenario,errores_subtriaje,3,0,3,,,,,
+Turno habitual,Conexión del escenario,tasa_subtriaje_pct,3,0,3,,,,,
+Turno habitual,Conexión del escenario,sensibilidad_alta_pct,3,0,3,,,,,
+Turno habitual,Conexión del escenario,muestra_referencia_alta,3,3,0,12.0,3.0,1.7320508075688774,4.54758686474901,19.45241313525099
+Turno habitual,Conexión del escenario,perdida_clasificacion_media,3,0,3,,,,,
+Turno habitual,Conexión del escenario,teleconsultas_pendientes,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,teleconsultas_sin_enviar,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,teleconsultas_esperando_respuesta,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,teleconsultas_respondidas,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Turno habitual,Conexión del escenario,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,teleconsultas_en_atencion_remota,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,reintentos_envio,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,demora_envio_teleconsulta_min,3,3,0,-0.010683760683760682,0.018504816320180313,0.010683760683760684,-0.056652272753733565,0.035284751386212204
+Turno habitual,Conexión del escenario,respuesta_teleconsulta_min,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión del escenario,respuesta_total_teleconsulta_min,3,3,0,-0.65022295006028,0.5797048400572575,0.3346927454575866,-2.0902896049307067,0.7898437048101469
+Turno habitual,Conexión del escenario,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,pacientes_atendidos_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,consultas_iniciadas_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión del escenario,pacientes_sin_completar_al_cierre,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión del escenario,atendidos_pct_al_cierre,3,3,0,-0.3703703703703667,1.6972502573910488,0.9799078929868837,-4.586573741033425,3.845833000292692
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_min_al_cierre,3,3,0,-1.2245555550068932,1.7894151571492656,1.0331193226721251,-5.669709228859028,3.220598118845241
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,17.62380731469511,9.78287420614173,5.648145056364175,-6.678199430091137,41.925814059481354
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,17.188612903129137,6.872187308960405,3.96765919274982,0.11715324672857719,34.260072559529696
+Turno habitual,Conexión del escenario,muestra_esperas_iniciadas_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,0.10828955540911878,0.6620492040611942,0.38223428618150795,-1.5363318394335834,1.752910950251821
+Turno habitual,Conexión del escenario,espera_acumulada_total_min_al_cierre,3,3,0,9.74605998682076,59.584428365507684,34.40108575633584,-138.26986554902297,157.7619855226645
+Turno habitual,Conexión del escenario,espera_medica_acumulada_min_al_cierre,3,3,0,0.10828955540911996,0.6620492040611923,0.38223428618150684,-1.5363318394335777,1.7529109502518174
+Turno habitual,Conexión del escenario,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,carga_medicos_pct_al_cierre,3,3,0,-0.11023609230061027,0.096514026482363,0.05572239917016695,-0.34999022519831824,0.1295180405970977
+Turno habitual,Conexión del escenario,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,concordancia_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión del escenario,errores_subtriaje_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión del escenario,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión del escenario,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión del escenario,muestra_referencia_alta_al_cierre,3,3,0,12.0,3.0,1.7320508075688774,4.54758686474901,19.45241313525099
+Turno habitual,Conexión del escenario,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión del escenario,teleconsultas_pendientes_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,teleconsultas_sin_enviar_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,teleconsultas_esperando_respuesta_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,teleconsultas_respondidas_al_cierre,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Turno habitual,Conexión del escenario,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,teleconsultas_en_atencion_remota_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,reintentos_envio_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión del escenario,demora_envio_teleconsulta_min_al_cierre,3,3,0,-0.010683760683760682,0.018504816320180313,0.010683760683760684,-0.056652272753733565,0.035284751386212204
+Turno habitual,Conexión del escenario,respuesta_teleconsulta_min_al_cierre,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión del escenario,respuesta_total_teleconsulta_min_al_cierre,3,3,0,-0.65022295006028,0.5797048400572575,0.3346927454575866,-2.0902896049307067,0.7898437048101469
+Turno habitual,Conexión del escenario,espera_medica_alta_min,3,3,0,-24.524231716689503,10.476802821972543,6.048784929512479,-50.55005270532378,1.5015892719447699
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_alta_min,3,3,0,-24.567446502977777,10.56296570124259,6.098531091053194,-50.80730794935977,1.6724149434042097
+Turno habitual,Conexión del escenario,consultas_iniciadas_alta,3,3,0,1.3333333333333333,1.5275252316519468,0.881917103688197,-2.4612497002634264,5.127916366930093
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_alta,3,3,0,-1.3333333333333333,1.5275252316519468,0.881917103688197,-5.127916366930093,2.4612497002634264
+Turno habitual,Conexión del escenario,sin_completar_alta,3,3,0,-1.6666666666666667,1.1547005383792517,0.6666666666666667,-4.535101819832975,1.2017684864996416
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min,3,3,0,-27.874873724004107,16.005831187100434,9.240970944476143,-67.63556258378985,11.88581513578163
+Turno habitual,Conexión del escenario,espera_medica_p95_alta_min,3,3,0,-41.01271774126602,13.772137359650866,7.95134721191093,-75.22460352778036,-6.800831954751686
+Turno habitual,Conexión del escenario,espera_medica_media_min,3,3,0,-15.638777404229964,7.367813402130886,4.2538090510592,-33.9414405296028,2.6638857211428704
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_media_min,3,3,0,-15.544231988007104,7.514480910310213,4.338487576387906,-34.21123740153666,3.122773425522448
+Turno habitual,Conexión del escenario,consultas_iniciadas_media,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_media,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,sin_completar_media,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_media_min,3,3,0,-16.50132636254521,6.044861755452077,3.4900025617243307,-31.517595411581016,-1.4850573135094045
+Turno habitual,Conexión del escenario,espera_medica_p95_media_min,3,3,0,-2.118961824860913,41.16601750808856,23.76721128975978,-104.38101835927806,100.14309470955622
+Turno habitual,Conexión del escenario,espera_medica_baja_min,3,3,0,7.216355259262612,3.256870739344444,1.8803551980763304,-0.8741601666391015,15.306870685164327
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_baja_min,3,3,0,7.23745931034633,3.264893128335708,1.8849869265199806,-0.8729848345869131,15.347903455279575
+Turno habitual,Conexión del escenario,consultas_iniciadas_baja,3,3,0,-2.6666666666666665,2.5166114784235836,1.452966314513558,-8.918276146042443,3.584942812709109
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_baja,3,3,0,2.6666666666666665,2.5166114784235836,1.452966314513558,-3.584942812709109,8.918276146042443
+Turno habitual,Conexión del escenario,sin_completar_baja,3,3,0,3.0,2.0,1.1547005383792517,-1.9682754235006605,7.9682754235006605
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min,3,3,0,9.108055618872937,4.847846321372585,2.7989053786343994,-2.934662248818812,21.150773486564688
+Turno habitual,Conexión del escenario,espera_medica_p95_baja_min,3,3,0,20.490775716544793,9.537774440364766,5.50663664061453,-3.20236945693372,44.1839208900233
+Turno habitual,Conexión del escenario,espera_medica_alta_min_al_cierre,3,3,0,-24.524231716689503,10.476802821972543,6.048784929512479,-50.55005270532378,1.5015892719447699
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-24.567446502977777,10.56296570124259,6.098531091053194,-50.80730794935977,1.6724149434042097
+Turno habitual,Conexión del escenario,consultas_iniciadas_alta_al_cierre,3,3,0,1.3333333333333333,1.5275252316519468,0.881917103688197,-2.4612497002634264,5.127916366930093
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_alta_al_cierre,3,3,0,-1.3333333333333333,1.5275252316519468,0.881917103688197,-5.127916366930093,2.4612497002634264
+Turno habitual,Conexión del escenario,sin_completar_alta_al_cierre,3,3,0,-1.6666666666666667,1.1547005383792517,0.6666666666666667,-4.535101819832975,1.2017684864996416
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-27.874873724004107,16.005831187100434,9.240970944476143,-67.63556258378985,11.88581513578163
+Turno habitual,Conexión del escenario,espera_medica_p95_alta_min_al_cierre,3,3,0,-41.01271774126602,13.772137359650866,7.95134721191093,-75.22460352778036,-6.800831954751686
+Turno habitual,Conexión del escenario,espera_medica_media_min_al_cierre,3,3,0,-15.638777404229964,7.367813402130886,4.2538090510592,-33.9414405296028,2.6638857211428704
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-15.544231988007104,7.514480910310213,4.338487576387906,-34.21123740153666,3.122773425522448
+Turno habitual,Conexión del escenario,consultas_iniciadas_media_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_media_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,sin_completar_media_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-16.50132636254521,6.044861755452077,3.4900025617243307,-31.517595411581016,-1.4850573135094045
+Turno habitual,Conexión del escenario,espera_medica_p95_media_min_al_cierre,3,3,0,-2.118961824860913,41.16601750808856,23.76721128975978,-104.38101835927806,100.14309470955622
+Turno habitual,Conexión del escenario,espera_medica_baja_min_al_cierre,3,3,0,7.216355259262612,3.256870739344444,1.8803551980763304,-0.8741601666391015,15.306870685164327
+Turno habitual,Conexión del escenario,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,7.23745931034633,3.264893128335708,1.8849869265199806,-0.8729848345869131,15.347903455279575
+Turno habitual,Conexión del escenario,consultas_iniciadas_baja_al_cierre,3,3,0,-2.6666666666666665,2.5166114784235836,1.452966314513558,-8.918276146042443,3.584942812709109
+Turno habitual,Conexión del escenario,pendientes_sin_consulta_baja_al_cierre,3,3,0,2.6666666666666665,2.5166114784235836,1.452966314513558,-3.584942812709109,8.918276146042443
+Turno habitual,Conexión del escenario,sin_completar_baja_al_cierre,3,3,0,3.0,2.0,1.1547005383792517,-1.9682754235006605,7.9682754235006605
+Turno habitual,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,9.108055618872937,4.847846321372585,2.7989053786343994,-2.934662248818812,21.150773486564688
+Turno habitual,Conexión del escenario,espera_medica_p95_baja_min_al_cierre,3,3,0,20.490775716544793,9.537774440364766,5.50663664061453,-3.20236945693372,44.1839208900233
+Turno habitual,Conexión disponible,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,pacientes_atendidos,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,consultas_iniciadas,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,pacientes_sin_iniciar_consulta,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión disponible,pacientes_sin_completar,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión disponible,atendidos_pct,3,3,0,-0.3703703703703667,1.6972502573910488,0.9799078929868837,-4.586573741033425,3.845833000292692
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_min,3,3,0,-1.2245555550068932,1.7894151571492656,1.0331193226721251,-5.669709228859028,3.220598118845241
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_p90_min,3,3,0,17.62380731469511,9.78287420614173,5.648145056364175,-6.678199430091137,41.925814059481354
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_p95_min,3,3,0,17.188612903129137,6.872187308960405,3.96765919274982,0.11715324672857719,34.260072559529696
+Turno habitual,Conexión disponible,muestra_esperas_iniciadas,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_min,3,3,0,0.10828955540911878,0.6620492040611942,0.38223428618150795,-1.5363318394335834,1.752910950251821
+Turno habitual,Conexión disponible,espera_acumulada_total_min,3,3,0,9.74605998682076,59.584428365507684,34.40108575633584,-138.26986554902297,157.7619855226645
+Turno habitual,Conexión disponible,espera_medica_acumulada_min,3,3,0,0.10828955540911996,0.6620492040611923,0.38223428618150684,-1.5363318394335777,1.7529109502518174
+Turno habitual,Conexión disponible,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,carga_medicos_pct,3,3,0,-0.11023609230061027,0.096514026482363,0.05572239917016695,-0.34999022519831824,0.1295180405970977
+Turno habitual,Conexión disponible,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,concordancia_pct,3,0,3,,,,,
+Turno habitual,Conexión disponible,errores_subtriaje,3,0,3,,,,,
+Turno habitual,Conexión disponible,tasa_subtriaje_pct,3,0,3,,,,,
+Turno habitual,Conexión disponible,sensibilidad_alta_pct,3,0,3,,,,,
+Turno habitual,Conexión disponible,muestra_referencia_alta,3,3,0,12.0,3.0,1.7320508075688774,4.54758686474901,19.45241313525099
+Turno habitual,Conexión disponible,perdida_clasificacion_media,3,0,3,,,,,
+Turno habitual,Conexión disponible,teleconsultas_pendientes,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,teleconsultas_sin_enviar,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,teleconsultas_esperando_respuesta,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,teleconsultas_respondidas,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Turno habitual,Conexión disponible,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,teleconsultas_en_atencion_remota,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,reintentos_envio,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,demora_envio_teleconsulta_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,respuesta_teleconsulta_min,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión disponible,respuesta_total_teleconsulta_min,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión disponible,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,pacientes_atendidos_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,consultas_iniciadas_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión disponible,pacientes_sin_completar_al_cierre,3,3,0,0.3333333333333333,1.5275252316519468,0.881917103688197,-3.4612497002634264,4.127916366930093
+Turno habitual,Conexión disponible,atendidos_pct_al_cierre,3,3,0,-0.3703703703703667,1.6972502573910488,0.9799078929868837,-4.586573741033425,3.845833000292692
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_min_al_cierre,3,3,0,-1.2245555550068932,1.7894151571492656,1.0331193226721251,-5.669709228859028,3.220598118845241
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,17.62380731469511,9.78287420614173,5.648145056364175,-6.678199430091137,41.925814059481354
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,17.188612903129137,6.872187308960405,3.96765919274982,0.11715324672857719,34.260072559529696
+Turno habitual,Conexión disponible,muestra_esperas_iniciadas_al_cierre,3,3,0,-0.3333333333333333,1.5275252316519468,0.881917103688197,-4.127916366930093,3.4612497002634264
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,0.10828955540911878,0.6620492040611942,0.38223428618150795,-1.5363318394335834,1.752910950251821
+Turno habitual,Conexión disponible,espera_acumulada_total_min_al_cierre,3,3,0,9.74605998682076,59.584428365507684,34.40108575633584,-138.26986554902297,157.7619855226645
+Turno habitual,Conexión disponible,espera_medica_acumulada_min_al_cierre,3,3,0,0.10828955540911996,0.6620492040611923,0.38223428618150684,-1.5363318394335777,1.7529109502518174
+Turno habitual,Conexión disponible,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,carga_medicos_pct_al_cierre,3,3,0,-0.11023609230061027,0.096514026482363,0.05572239917016695,-0.34999022519831824,0.1295180405970977
+Turno habitual,Conexión disponible,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,concordancia_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión disponible,errores_subtriaje_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión disponible,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión disponible,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión disponible,muestra_referencia_alta_al_cierre,3,3,0,12.0,3.0,1.7320508075688774,4.54758686474901,19.45241313525099
+Turno habitual,Conexión disponible,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Turno habitual,Conexión disponible,teleconsultas_pendientes_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,teleconsultas_sin_enviar_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,teleconsultas_esperando_respuesta_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,teleconsultas_respondidas_al_cierre,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Turno habitual,Conexión disponible,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,teleconsultas_en_atencion_remota_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,reintentos_envio_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,demora_envio_teleconsulta_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Turno habitual,Conexión disponible,respuesta_teleconsulta_min_al_cierre,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión disponible,respuesta_total_teleconsulta_min_al_cierre,3,3,0,-0.6269129267502578,0.5697219415790238,0.32892911633388566,-2.0421806870383294,0.7883548335378137
+Turno habitual,Conexión disponible,espera_medica_alta_min,3,3,0,-24.524231716689503,10.476802821972543,6.048784929512479,-50.55005270532378,1.5015892719447699
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_alta_min,3,3,0,-24.567446502977777,10.56296570124259,6.098531091053194,-50.80730794935977,1.6724149434042097
+Turno habitual,Conexión disponible,consultas_iniciadas_alta,3,3,0,1.3333333333333333,1.5275252316519468,0.881917103688197,-2.4612497002634264,5.127916366930093
+Turno habitual,Conexión disponible,pendientes_sin_consulta_alta,3,3,0,-1.3333333333333333,1.5275252316519468,0.881917103688197,-5.127916366930093,2.4612497002634264
+Turno habitual,Conexión disponible,sin_completar_alta,3,3,0,-1.6666666666666667,1.1547005383792517,0.6666666666666667,-4.535101819832975,1.2017684864996416
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_alta_min,3,3,0,-27.874873724004107,16.005831187100434,9.240970944476143,-67.63556258378985,11.88581513578163
+Turno habitual,Conexión disponible,espera_medica_p95_alta_min,3,3,0,-41.01271774126602,13.772137359650866,7.95134721191093,-75.22460352778036,-6.800831954751686
+Turno habitual,Conexión disponible,espera_medica_media_min,3,3,0,-15.638777404229964,7.367813402130886,4.2538090510592,-33.9414405296028,2.6638857211428704
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_media_min,3,3,0,-15.544231988007104,7.514480910310213,4.338487576387906,-34.21123740153666,3.122773425522448
+Turno habitual,Conexión disponible,consultas_iniciadas_media,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Turno habitual,Conexión disponible,pendientes_sin_consulta_media,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,sin_completar_media,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_media_min,3,3,0,-16.50132636254521,6.044861755452077,3.4900025617243307,-31.517595411581016,-1.4850573135094045
+Turno habitual,Conexión disponible,espera_medica_p95_media_min,3,3,0,-2.118961824860913,41.16601750808856,23.76721128975978,-104.38101835927806,100.14309470955622
+Turno habitual,Conexión disponible,espera_medica_baja_min,3,3,0,7.216355259262612,3.256870739344444,1.8803551980763304,-0.8741601666391015,15.306870685164327
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_baja_min,3,3,0,7.23745931034633,3.264893128335708,1.8849869265199806,-0.8729848345869131,15.347903455279575
+Turno habitual,Conexión disponible,consultas_iniciadas_baja,3,3,0,-2.6666666666666665,2.5166114784235836,1.452966314513558,-8.918276146042443,3.584942812709109
+Turno habitual,Conexión disponible,pendientes_sin_consulta_baja,3,3,0,2.6666666666666665,2.5166114784235836,1.452966314513558,-3.584942812709109,8.918276146042443
+Turno habitual,Conexión disponible,sin_completar_baja,3,3,0,3.0,2.0,1.1547005383792517,-1.9682754235006605,7.9682754235006605
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_baja_min,3,3,0,9.108055618872937,4.847846321372585,2.7989053786343994,-2.934662248818812,21.150773486564688
+Turno habitual,Conexión disponible,espera_medica_p95_baja_min,3,3,0,20.490775716544793,9.537774440364766,5.50663664061453,-3.20236945693372,44.1839208900233
+Turno habitual,Conexión disponible,espera_medica_alta_min_al_cierre,3,3,0,-24.524231716689503,10.476802821972543,6.048784929512479,-50.55005270532378,1.5015892719447699
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-24.567446502977777,10.56296570124259,6.098531091053194,-50.80730794935977,1.6724149434042097
+Turno habitual,Conexión disponible,consultas_iniciadas_alta_al_cierre,3,3,0,1.3333333333333333,1.5275252316519468,0.881917103688197,-2.4612497002634264,5.127916366930093
+Turno habitual,Conexión disponible,pendientes_sin_consulta_alta_al_cierre,3,3,0,-1.3333333333333333,1.5275252316519468,0.881917103688197,-5.127916366930093,2.4612497002634264
+Turno habitual,Conexión disponible,sin_completar_alta_al_cierre,3,3,0,-1.6666666666666667,1.1547005383792517,0.6666666666666667,-4.535101819832975,1.2017684864996416
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-27.874873724004107,16.005831187100434,9.240970944476143,-67.63556258378985,11.88581513578163
+Turno habitual,Conexión disponible,espera_medica_p95_alta_min_al_cierre,3,3,0,-41.01271774126602,13.772137359650866,7.95134721191093,-75.22460352778036,-6.800831954751686
+Turno habitual,Conexión disponible,espera_medica_media_min_al_cierre,3,3,0,-15.638777404229964,7.367813402130886,4.2538090510592,-33.9414405296028,2.6638857211428704
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-15.544231988007104,7.514480910310213,4.338487576387906,-34.21123740153666,3.122773425522448
+Turno habitual,Conexión disponible,consultas_iniciadas_media_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Turno habitual,Conexión disponible,pendientes_sin_consulta_media_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,sin_completar_media_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-16.50132636254521,6.044861755452077,3.4900025617243307,-31.517595411581016,-1.4850573135094045
+Turno habitual,Conexión disponible,espera_medica_p95_media_min_al_cierre,3,3,0,-2.118961824860913,41.16601750808856,23.76721128975978,-104.38101835927806,100.14309470955622
+Turno habitual,Conexión disponible,espera_medica_baja_min_al_cierre,3,3,0,7.216355259262612,3.256870739344444,1.8803551980763304,-0.8741601666391015,15.306870685164327
+Turno habitual,Conexión disponible,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,7.23745931034633,3.264893128335708,1.8849869265199806,-0.8729848345869131,15.347903455279575
+Turno habitual,Conexión disponible,consultas_iniciadas_baja_al_cierre,3,3,0,-2.6666666666666665,2.5166114784235836,1.452966314513558,-8.918276146042443,3.584942812709109
+Turno habitual,Conexión disponible,pendientes_sin_consulta_baja_al_cierre,3,3,0,2.6666666666666665,2.5166114784235836,1.452966314513558,-3.584942812709109,8.918276146042443
+Turno habitual,Conexión disponible,sin_completar_baja_al_cierre,3,3,0,3.0,2.0,1.1547005383792517,-1.9682754235006605,7.9682754235006605
+Turno habitual,Conexión disponible,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,9.108055618872937,4.847846321372585,2.7989053786343994,-2.934662248818812,21.150773486564688
+Turno habitual,Conexión disponible,espera_medica_p95_baja_min_al_cierre,3,3,0,20.490775716544793,9.537774440364766,5.50663664061453,-3.20236945693372,44.1839208900233
+Sobrecarga de llegadas,Conexión del escenario,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,pacientes_atendidos,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,pacientes_sin_iniciar_consulta,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión del escenario,pacientes_sin_completar,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión del escenario,atendidos_pct,3,3,0,-0.925925925925925,1.283000598199169,0.7407407407407411,-4.113076096110714,2.2612242442588633
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_min,3,3,0,-89.4260572864227,13.01582621342722,7.514690768047593,-121.75916203278575,-57.09295254005965
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_p90_min,3,3,0,-73.83676772272155,79.4159586208025,45.850825087672504,-271.11694544746075,123.44341000201767
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_p95_min,3,3,0,-71.22048604944229,81.36623451378695,46.976817399481114,-273.3454176682617,130.90444556937715
+Sobrecarga de llegadas,Conexión del escenario,muestra_esperas_iniciadas,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_min,3,3,0,3.1721022088032953,3.263475041982605,1.8841681939822823,-4.934819214341685,11.279023631948276
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_total_min,3,3,0,570.978397584593,587.4255075568702,339.1502749168116,-888.2674585815068,2030.224253750693
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_acumulada_min,3,3,0,3.1721022088033144,3.263475041982621,1.8841681939822916,-4.934819214341706,11.279023631948336
+Sobrecarga de llegadas,Conexión del escenario,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,carga_medicos_pct,3,3,0,0.0,1.4210854715202004e-14,8.20464079523654e-15,-3.53017201142383e-14,3.53017201142383e-14
+Sobrecarga de llegadas,Conexión del escenario,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,concordancia_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,errores_subtriaje,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,tasa_subtriaje_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,sensibilidad_alta_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,muestra_referencia_alta,3,3,0,27.666666666666668,5.033222956847167,2.905932629027116,15.163447707915116,40.16988562541822
+Sobrecarga de llegadas,Conexión del escenario,perdida_clasificacion_media,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_pendientes,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_sin_enviar,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_esperando_respuesta,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_respondidas,3,3,0,6.666666666666667,1.1547005383792517,0.6666666666666667,3.7982315135003586,9.535101819832976
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_en_atencion_remota,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,reintentos_envio,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,demora_envio_teleconsulta_min,3,3,0,-0.6576019296607533,0.3047748866407601,0.17596186284428053,-1.4147047191594972,0.09950085983799073
+Sobrecarga de llegadas,Conexión del escenario,respuesta_teleconsulta_min,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión del escenario,respuesta_total_teleconsulta_min,3,3,0,-0.6150907601961345,3.260602793299094,1.8825099004316777,-8.714877122068879,7.48469560167661
+Sobrecarga de llegadas,Conexión del escenario,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,pacientes_atendidos_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión del escenario,pacientes_sin_completar_al_cierre,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión del escenario,atendidos_pct_al_cierre,3,3,0,-0.925925925925925,1.283000598199169,0.7407407407407411,-4.113076096110714,2.2612242442588633
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_min_al_cierre,3,3,0,-89.4260572864227,13.01582621342722,7.514690768047593,-121.75916203278575,-57.09295254005965
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,-73.83676772272155,79.4159586208025,45.850825087672504,-271.11694544746075,123.44341000201767
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,-71.22048604944229,81.36623451378695,46.976817399481114,-273.3454176682617,130.90444556937715
+Sobrecarga de llegadas,Conexión del escenario,muestra_esperas_iniciadas_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,3.1721022088032953,3.263475041982605,1.8841681939822823,-4.934819214341685,11.279023631948276
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_total_min_al_cierre,3,3,0,570.978397584593,587.4255075568702,339.1502749168116,-888.2674585815068,2030.224253750693
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_acumulada_min_al_cierre,3,3,0,3.1721022088033144,3.263475041982621,1.8841681939822916,-4.934819214341706,11.279023631948336
+Sobrecarga de llegadas,Conexión del escenario,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,carga_medicos_pct_al_cierre,3,3,0,0.0,1.4210854715202004e-14,8.20464079523654e-15,-3.53017201142383e-14,3.53017201142383e-14
+Sobrecarga de llegadas,Conexión del escenario,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,concordancia_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,errores_subtriaje_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,muestra_referencia_alta_al_cierre,3,3,0,27.666666666666668,5.033222956847167,2.905932629027116,15.163447707915116,40.16988562541822
+Sobrecarga de llegadas,Conexión del escenario,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_pendientes_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_sin_enviar_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_esperando_respuesta_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_respondidas_al_cierre,3,3,0,6.666666666666667,1.1547005383792517,0.6666666666666667,3.7982315135003586,9.535101819832976
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,teleconsultas_en_atencion_remota_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión del escenario,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,reintentos_envio_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión del escenario,demora_envio_teleconsulta_min_al_cierre,3,3,0,-0.6576019296607533,0.3047748866407601,0.17596186284428053,-1.4147047191594972,0.09950085983799073
+Sobrecarga de llegadas,Conexión del escenario,respuesta_teleconsulta_min_al_cierre,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión del escenario,respuesta_total_teleconsulta_min_al_cierre,3,3,0,-0.6150907601961345,3.260602793299094,1.8825099004316777,-8.714877122068879,7.48469560167661
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_alta_min,3,3,0,-122.57301833173487,24.206651283442778,13.975716634675088,-182.7056736601246,-62.44036300334514
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_alta_min,3,3,0,-120.75951458689049,26.937637281553897,15.552452135837642,-187.67631522345016,-53.842713950330804
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_alta,3,3,0,15.666666666666666,2.0816659994661326,1.2018504251546631,10.495521654124403,20.83781167920893
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_alta,3,3,0,-15.666666666666666,2.0816659994661326,1.2018504251546631,-20.83781167920893,-10.495521654124403
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_alta,3,3,0,-15.333333333333334,3.214550253664318,1.855921454276674,-23.318718844777457,-7.347947821889211
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min,3,3,0,-137.89054728147138,16.432435573697532,9.487271101915454,-178.7109801860011,-97.07011437694167
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_alta_min,3,3,0,-139.19555533328904,104.45043485993357,60.30448668335612,-398.6648195775713,120.27370891099324
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_media_min,3,3,0,-83.01768015404762,45.16248781975284,26.0745745000075,-195.20751930356062,29.172158995465352
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_media_min,3,3,0,-81.8267842833822,42.88868128481416,24.761791684975524,-188.36817487022967,24.714606303465274
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_media,3,3,0,7.0,2.0,1.1547005383792517,2.0317245764993395,11.96827542350066
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_media,3,3,0,-7.0,2.0,1.1547005383792517,-11.96827542350066,-2.0317245764993395
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_media,3,3,0,-7.333333333333333,2.8867513459481287,1.6666666666666667,-14.504421216249103,-0.16224545041756322
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_media_min,3,3,0,-39.437243956752866,12.438930671302197,7.181619971507416,-70.33726073118251,-8.537227182323228
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_media_min,3,3,0,-72.3239679339352,110.07686094573674,63.55290529857012,-345.770049400337,201.12211353246659
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_baja_min,3,3,0,-33.391680241623256,41.52188163503709,23.972669539248443,-136.53775227405234,69.75439179080584
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_baja_min,3,3,0,-33.205379256623175,40.0417872998369,23.118136676394574,-132.67469313403345,66.2639346207871
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_baja,3,3,0,-24.333333333333332,2.081665999466133,1.2018504251546633,-29.504478345875597,-19.162188320791067
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_baja,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_baja,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min,3,3,0,54.710570209854986,7.700723875816896,4.446015002657863,35.58091162216207,73.8402287975479
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_baja_min,3,3,0,-57.912890544215706,92.87189998014503,53.619616453688735,-288.6194796467987,172.79369855836728
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_alta_min_al_cierre,3,3,0,-122.57301833173487,24.206651283442778,13.975716634675088,-182.7056736601246,-62.44036300334514
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-120.75951458689049,26.937637281553897,15.552452135837642,-187.67631522345016,-53.842713950330804
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_alta_al_cierre,3,3,0,15.666666666666666,2.0816659994661326,1.2018504251546631,10.495521654124403,20.83781167920893
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_alta_al_cierre,3,3,0,-15.666666666666666,2.0816659994661326,1.2018504251546631,-20.83781167920893,-10.495521654124403
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_alta_al_cierre,3,3,0,-15.333333333333334,3.214550253664318,1.855921454276674,-23.318718844777457,-7.347947821889211
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-137.89054728147138,16.432435573697532,9.487271101915454,-178.7109801860011,-97.07011437694167
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_alta_min_al_cierre,3,3,0,-139.19555533328904,104.45043485993357,60.30448668335612,-398.6648195775713,120.27370891099324
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_media_min_al_cierre,3,3,0,-83.01768015404762,45.16248781975284,26.0745745000075,-195.20751930356062,29.172158995465352
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-81.8267842833822,42.88868128481416,24.761791684975524,-188.36817487022967,24.714606303465274
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_media_al_cierre,3,3,0,7.0,2.0,1.1547005383792517,2.0317245764993395,11.96827542350066
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_media_al_cierre,3,3,0,-7.0,2.0,1.1547005383792517,-11.96827542350066,-2.0317245764993395
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_media_al_cierre,3,3,0,-7.333333333333333,2.8867513459481287,1.6666666666666667,-14.504421216249103,-0.16224545041756322
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-39.437243956752866,12.438930671302197,7.181619971507416,-70.33726073118251,-8.537227182323228
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_media_min_al_cierre,3,3,0,-72.3239679339352,110.07686094573674,63.55290529857012,-345.770049400337,201.12211353246659
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_baja_min_al_cierre,3,3,0,-33.391680241623256,41.52188163503709,23.972669539248443,-136.53775227405234,69.75439179080584
+Sobrecarga de llegadas,Conexión del escenario,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,-33.205379256623175,40.0417872998369,23.118136676394574,-132.67469313403345,66.2639346207871
+Sobrecarga de llegadas,Conexión del escenario,consultas_iniciadas_baja_al_cierre,3,3,0,-24.333333333333332,2.081665999466133,1.2018504251546633,-29.504478345875597,-19.162188320791067
+Sobrecarga de llegadas,Conexión del escenario,pendientes_sin_consulta_baja_al_cierre,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión del escenario,sin_completar_baja_al_cierre,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,54.710570209854986,7.700723875816896,4.446015002657863,35.58091162216207,73.8402287975479
+Sobrecarga de llegadas,Conexión del escenario,espera_medica_p95_baja_min_al_cierre,3,3,0,-57.912890544215706,92.87189998014503,53.619616453688735,-288.6194796467987,172.79369855836728
+Sobrecarga de llegadas,Conexión disponible,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,pacientes_atendidos,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,pacientes_sin_iniciar_consulta,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión disponible,pacientes_sin_completar,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión disponible,atendidos_pct,3,3,0,-0.925925925925925,1.283000598199169,0.7407407407407411,-4.113076096110714,2.2612242442588633
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_min,3,3,0,-89.4260572864227,13.01582621342722,7.514690768047593,-121.75916203278575,-57.09295254005965
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_p90_min,3,3,0,-73.83676772272155,79.4159586208025,45.850825087672504,-271.11694544746075,123.44341000201767
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_p95_min,3,3,0,-71.22048604944229,81.36623451378695,46.976817399481114,-273.3454176682617,130.90444556937715
+Sobrecarga de llegadas,Conexión disponible,muestra_esperas_iniciadas,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_min,3,3,0,3.1721022088032953,3.263475041982605,1.8841681939822823,-4.934819214341685,11.279023631948276
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_total_min,3,3,0,570.978397584593,587.4255075568702,339.1502749168116,-888.2674585815068,2030.224253750693
+Sobrecarga de llegadas,Conexión disponible,espera_medica_acumulada_min,3,3,0,3.1721022088033144,3.263475041982621,1.8841681939822916,-4.934819214341706,11.279023631948336
+Sobrecarga de llegadas,Conexión disponible,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,carga_medicos_pct,3,3,0,0.0,1.4210854715202004e-14,8.20464079523654e-15,-3.53017201142383e-14,3.53017201142383e-14
+Sobrecarga de llegadas,Conexión disponible,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,concordancia_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,errores_subtriaje,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,tasa_subtriaje_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,sensibilidad_alta_pct,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,muestra_referencia_alta,3,3,0,27.666666666666668,5.033222956847167,2.905932629027116,15.163447707915116,40.16988562541822
+Sobrecarga de llegadas,Conexión disponible,perdida_clasificacion_media,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_pendientes,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_sin_enviar,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_esperando_respuesta,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_respondidas,3,3,0,6.666666666666667,1.1547005383792517,0.6666666666666667,3.7982315135003586,9.535101819832976
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_en_atencion_remota,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,reintentos_envio,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,demora_envio_teleconsulta_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,respuesta_teleconsulta_min,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión disponible,respuesta_total_teleconsulta_min,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión disponible,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,pacientes_atendidos_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión disponible,pacientes_sin_completar_al_cierre,3,3,0,1.6666666666666667,2.3094010767585034,1.3333333333333335,-4.07020363966595,7.403536972999284
+Sobrecarga de llegadas,Conexión disponible,atendidos_pct_al_cierre,3,3,0,-0.925925925925925,1.283000598199169,0.7407407407407411,-4.113076096110714,2.2612242442588633
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_min_al_cierre,3,3,0,-89.4260572864227,13.01582621342722,7.514690768047593,-121.75916203278575,-57.09295254005965
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,-73.83676772272155,79.4159586208025,45.850825087672504,-271.11694544746075,123.44341000201767
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,-71.22048604944229,81.36623451378695,46.976817399481114,-273.3454176682617,130.90444556937715
+Sobrecarga de llegadas,Conexión disponible,muestra_esperas_iniciadas_al_cierre,3,3,0,-1.6666666666666667,2.3094010767585034,1.3333333333333335,-7.403536972999284,4.07020363966595
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,3.1721022088032953,3.263475041982605,1.8841681939822823,-4.934819214341685,11.279023631948276
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_total_min_al_cierre,3,3,0,570.978397584593,587.4255075568702,339.1502749168116,-888.2674585815068,2030.224253750693
+Sobrecarga de llegadas,Conexión disponible,espera_medica_acumulada_min_al_cierre,3,3,0,3.1721022088033144,3.263475041982621,1.8841681939822916,-4.934819214341706,11.279023631948336
+Sobrecarga de llegadas,Conexión disponible,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,carga_medicos_pct_al_cierre,3,3,0,0.0,1.4210854715202004e-14,8.20464079523654e-15,-3.53017201142383e-14,3.53017201142383e-14
+Sobrecarga de llegadas,Conexión disponible,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,concordancia_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,errores_subtriaje_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,muestra_referencia_alta_al_cierre,3,3,0,27.666666666666668,5.033222956847167,2.905932629027116,15.163447707915116,40.16988562541822
+Sobrecarga de llegadas,Conexión disponible,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_pendientes_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_sin_enviar_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_esperando_respuesta_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_respondidas_al_cierre,3,3,0,6.666666666666667,1.1547005383792517,0.6666666666666667,3.7982315135003586,9.535101819832976
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,teleconsultas_en_atencion_remota_al_cierre,3,3,0,0.3333333333333333,1.1547005383792517,0.6666666666666667,-2.535101819832975,3.201768486499642
+Sobrecarga de llegadas,Conexión disponible,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,reintentos_envio_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,demora_envio_teleconsulta_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Sobrecarga de llegadas,Conexión disponible,respuesta_teleconsulta_min_al_cierre,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión disponible,respuesta_total_teleconsulta_min_al_cierre,3,3,0,0.12300447789910389,3.41651593142503,1.972526392698886,-8.364091590149618,8.610100545947825
+Sobrecarga de llegadas,Conexión disponible,espera_medica_alta_min,3,3,0,-122.57301833173487,24.206651283442778,13.975716634675088,-182.7056736601246,-62.44036300334514
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_alta_min,3,3,0,-120.75951458689049,26.937637281553897,15.552452135837642,-187.67631522345016,-53.842713950330804
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_alta,3,3,0,15.666666666666666,2.0816659994661326,1.2018504251546631,10.495521654124403,20.83781167920893
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_alta,3,3,0,-15.666666666666666,2.0816659994661326,1.2018504251546631,-20.83781167920893,-10.495521654124403
+Sobrecarga de llegadas,Conexión disponible,sin_completar_alta,3,3,0,-15.333333333333334,3.214550253664318,1.855921454276674,-23.318718844777457,-7.347947821889211
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_alta_min,3,3,0,-137.89054728147138,16.432435573697532,9.487271101915454,-178.7109801860011,-97.07011437694167
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_alta_min,3,3,0,-139.19555533328904,104.45043485993357,60.30448668335612,-398.6648195775713,120.27370891099324
+Sobrecarga de llegadas,Conexión disponible,espera_medica_media_min,3,3,0,-83.01768015404762,45.16248781975284,26.0745745000075,-195.20751930356062,29.172158995465352
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_media_min,3,3,0,-81.8267842833822,42.88868128481416,24.761791684975524,-188.36817487022967,24.714606303465274
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_media,3,3,0,7.0,2.0,1.1547005383792517,2.0317245764993395,11.96827542350066
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_media,3,3,0,-7.0,2.0,1.1547005383792517,-11.96827542350066,-2.0317245764993395
+Sobrecarga de llegadas,Conexión disponible,sin_completar_media,3,3,0,-7.333333333333333,2.8867513459481287,1.6666666666666667,-14.504421216249103,-0.16224545041756322
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_media_min,3,3,0,-39.437243956752866,12.438930671302197,7.181619971507416,-70.33726073118251,-8.537227182323228
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_media_min,3,3,0,-72.3239679339352,110.07686094573674,63.55290529857012,-345.770049400337,201.12211353246659
+Sobrecarga de llegadas,Conexión disponible,espera_medica_baja_min,3,3,0,-33.391680241623256,41.52188163503709,23.972669539248443,-136.53775227405234,69.75439179080584
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_baja_min,3,3,0,-33.205379256623175,40.0417872998369,23.118136676394574,-132.67469313403345,66.2639346207871
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_baja,3,3,0,-24.333333333333332,2.081665999466133,1.2018504251546633,-29.504478345875597,-19.162188320791067
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_baja,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión disponible,sin_completar_baja,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_baja_min,3,3,0,54.710570209854986,7.700723875816896,4.446015002657863,35.58091162216207,73.8402287975479
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_baja_min,3,3,0,-57.912890544215706,92.87189998014503,53.619616453688735,-288.6194796467987,172.79369855836728
+Sobrecarga de llegadas,Conexión disponible,espera_medica_alta_min_al_cierre,3,3,0,-122.57301833173487,24.206651283442778,13.975716634675088,-182.7056736601246,-62.44036300334514
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-120.75951458689049,26.937637281553897,15.552452135837642,-187.67631522345016,-53.842713950330804
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_alta_al_cierre,3,3,0,15.666666666666666,2.0816659994661326,1.2018504251546631,10.495521654124403,20.83781167920893
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_alta_al_cierre,3,3,0,-15.666666666666666,2.0816659994661326,1.2018504251546631,-20.83781167920893,-10.495521654124403
+Sobrecarga de llegadas,Conexión disponible,sin_completar_alta_al_cierre,3,3,0,-15.333333333333334,3.214550253664318,1.855921454276674,-23.318718844777457,-7.347947821889211
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-137.89054728147138,16.432435573697532,9.487271101915454,-178.7109801860011,-97.07011437694167
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_alta_min_al_cierre,3,3,0,-139.19555533328904,104.45043485993357,60.30448668335612,-398.6648195775713,120.27370891099324
+Sobrecarga de llegadas,Conexión disponible,espera_medica_media_min_al_cierre,3,3,0,-83.01768015404762,45.16248781975284,26.0745745000075,-195.20751930356062,29.172158995465352
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-81.8267842833822,42.88868128481416,24.761791684975524,-188.36817487022967,24.714606303465274
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_media_al_cierre,3,3,0,7.0,2.0,1.1547005383792517,2.0317245764993395,11.96827542350066
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_media_al_cierre,3,3,0,-7.0,2.0,1.1547005383792517,-11.96827542350066,-2.0317245764993395
+Sobrecarga de llegadas,Conexión disponible,sin_completar_media_al_cierre,3,3,0,-7.333333333333333,2.8867513459481287,1.6666666666666667,-14.504421216249103,-0.16224545041756322
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-39.437243956752866,12.438930671302197,7.181619971507416,-70.33726073118251,-8.537227182323228
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_media_min_al_cierre,3,3,0,-72.3239679339352,110.07686094573674,63.55290529857012,-345.770049400337,201.12211353246659
+Sobrecarga de llegadas,Conexión disponible,espera_medica_baja_min_al_cierre,3,3,0,-33.391680241623256,41.52188163503709,23.972669539248443,-136.53775227405234,69.75439179080584
+Sobrecarga de llegadas,Conexión disponible,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,-33.205379256623175,40.0417872998369,23.118136676394574,-132.67469313403345,66.2639346207871
+Sobrecarga de llegadas,Conexión disponible,consultas_iniciadas_baja_al_cierre,3,3,0,-24.333333333333332,2.081665999466133,1.2018504251546633,-29.504478345875597,-19.162188320791067
+Sobrecarga de llegadas,Conexión disponible,pendientes_sin_consulta_baja_al_cierre,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión disponible,sin_completar_baja_al_cierre,3,3,0,24.333333333333332,2.081665999466133,1.2018504251546633,19.162188320791067,29.504478345875597
+Sobrecarga de llegadas,Conexión disponible,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,54.710570209854986,7.700723875816896,4.446015002657863,35.58091162216207,73.8402287975479
+Sobrecarga de llegadas,Conexión disponible,espera_medica_p95_baja_min_al_cierre,3,3,0,-57.912890544215706,92.87189998014503,53.619616453688735,-288.6194796467987,172.79369855836728
+Conexión intermitente,Conexión del escenario,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,pacientes_atendidos,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,consultas_iniciadas,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,pacientes_sin_iniciar_consulta,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión del escenario,pacientes_sin_completar,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión del escenario,atendidos_pct,3,3,0,-0.9090909090909113,0.9090909090909136,0.5248638810814806,-3.167397919773041,1.3492161015912183
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_min,3,3,0,-6.755607372481921,4.363372608021724,2.5191943498159817,-17.594825818487074,4.083611073523232
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_p90_min,3,3,0,39.41232095034523,16.726427448061852,9.657007389719256,-2.138428256241049,80.96307015693151
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_p95_min,3,3,0,36.58349250096324,19.758634857244985,11.407653153649916,-12.499677480623632,85.66666248255011
+Conexión intermitente,Conexión del escenario,muestra_esperas_iniciadas,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_min,3,3,0,-0.8828849230410754,1.271686076156575,0.7342082983936975,-4.041928262329425,2.2761584162472746
+Conexión intermitente,Conexión del escenario,espera_acumulada_total_min,3,3,0,-97.11734153451864,139.88546837722305,80.76291282330662,-444.61210885623666,250.3774257871994
+Conexión intermitente,Conexión del escenario,espera_medica_acumulada_min,3,3,0,-0.8828849230410872,1.2716860761565747,0.7342082983936974,-4.041928262329437,2.276158416247262
+Conexión intermitente,Conexión del escenario,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,carga_medicos_pct,3,3,0,0.013688112777496523,0.02370850679044287,0.013688112777546262,-0.04520708302993139,0.07258330858492444
+Conexión intermitente,Conexión del escenario,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,concordancia_pct,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,errores_subtriaje,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,tasa_subtriaje_pct,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,sensibilidad_alta_pct,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,muestra_referencia_alta,3,3,0,15.666666666666666,3.511884584284246,2.0275875100994067,6.942661731531539,24.39067160180179
+Conexión intermitente,Conexión del escenario,perdida_clasificacion_media,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,teleconsultas_pendientes,3,3,0,-2.0,0.0,0.0,-2.0,-2.0
+Conexión intermitente,Conexión del escenario,teleconsultas_sin_enviar,3,3,0,0.3333333333333333,1.5275252316519465,0.8819171036881969,-3.461249700263426,4.1279163669300925
+Conexión intermitente,Conexión del escenario,teleconsultas_esperando_respuesta,3,3,0,-2.3333333333333335,1.5275252316519468,0.881917103688197,-6.127916366930093,1.4612497002634264
+Conexión intermitente,Conexión del escenario,teleconsultas_respondidas,3,3,0,3.3333333333333335,2.5166114784235836,1.452966314513558,-2.9182761460424422,9.584942812709109
+Conexión intermitente,Conexión del escenario,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,teleconsultas_en_atencion_remota,3,3,0,-2.3333333333333335,1.5275252316519468,0.881917103688197,-6.127916366930093,1.4612497002634264
+Conexión intermitente,Conexión del escenario,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,reintentos_envio,3,3,0,8.666666666666666,8.020806277010644,4.630814663149936,-11.258120684699241,28.59145401803257
+Conexión intermitente,Conexión del escenario,demora_envio_teleconsulta_min,3,3,0,0.7621738641475476,0.8961687121249873,0.5174032471846817,-1.4640326297328587,2.9883803580279538
+Conexión intermitente,Conexión del escenario,respuesta_teleconsulta_min,3,3,0,0.9874750061801146,1.9333950971911922,1.1162461798132375,-3.81534466646572,5.7902946788259495
+Conexión intermitente,Conexión del escenario,respuesta_total_teleconsulta_min,3,3,0,-0.9330962526264415,3.1088699542693514,1.7949069049729496,-8.65595734695446,6.789764841701578
+Conexión intermitente,Conexión del escenario,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,pacientes_atendidos_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión del escenario,pacientes_sin_completar_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión del escenario,atendidos_pct_al_cierre,3,3,0,-0.9090909090909113,0.9090909090909136,0.5248638810814806,-3.167397919773041,1.3492161015912183
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_min_al_cierre,3,3,0,-6.755607372481921,4.363372608021724,2.5191943498159817,-17.594825818487074,4.083611073523232
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,39.41232095034523,16.726427448061852,9.657007389719256,-2.138428256241049,80.96307015693151
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,36.58349250096324,19.758634857244985,11.407653153649916,-12.499677480623632,85.66666248255011
+Conexión intermitente,Conexión del escenario,muestra_esperas_iniciadas_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,-0.8828849230410754,1.271686076156575,0.7342082983936975,-4.041928262329425,2.2761584162472746
+Conexión intermitente,Conexión del escenario,espera_acumulada_total_min_al_cierre,3,3,0,-97.11734153451864,139.88546837722305,80.76291282330662,-444.61210885623666,250.3774257871994
+Conexión intermitente,Conexión del escenario,espera_medica_acumulada_min_al_cierre,3,3,0,-0.8828849230410872,1.2716860761565747,0.7342082983936974,-4.041928262329437,2.276158416247262
+Conexión intermitente,Conexión del escenario,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,carga_medicos_pct_al_cierre,3,3,0,0.013688112777496523,0.02370850679044287,0.013688112777546262,-0.04520708302993139,0.07258330858492444
+Conexión intermitente,Conexión del escenario,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,concordancia_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,errores_subtriaje_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,muestra_referencia_alta_al_cierre,3,3,0,15.666666666666666,3.511884584284246,2.0275875100994067,6.942661731531539,24.39067160180179
+Conexión intermitente,Conexión del escenario,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión del escenario,teleconsultas_pendientes_al_cierre,3,3,0,-2.0,0.0,0.0,-2.0,-2.0
+Conexión intermitente,Conexión del escenario,teleconsultas_sin_enviar_al_cierre,3,3,0,0.3333333333333333,1.5275252316519465,0.8819171036881969,-3.461249700263426,4.1279163669300925
+Conexión intermitente,Conexión del escenario,teleconsultas_esperando_respuesta_al_cierre,3,3,0,-2.3333333333333335,1.5275252316519468,0.881917103688197,-6.127916366930093,1.4612497002634264
+Conexión intermitente,Conexión del escenario,teleconsultas_respondidas_al_cierre,3,3,0,3.3333333333333335,2.5166114784235836,1.452966314513558,-2.9182761460424422,9.584942812709109
+Conexión intermitente,Conexión del escenario,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,teleconsultas_en_atencion_remota_al_cierre,3,3,0,-2.3333333333333335,1.5275252316519468,0.881917103688197,-6.127916366930093,1.4612497002634264
+Conexión intermitente,Conexión del escenario,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión del escenario,reintentos_envio_al_cierre,3,3,0,8.666666666666666,8.020806277010644,4.630814663149936,-11.258120684699241,28.59145401803257
+Conexión intermitente,Conexión del escenario,demora_envio_teleconsulta_min_al_cierre,3,3,0,0.7621738641475476,0.8961687121249873,0.5174032471846817,-1.4640326297328587,2.9883803580279538
+Conexión intermitente,Conexión del escenario,respuesta_teleconsulta_min_al_cierre,3,3,0,0.9874750061801146,1.9333950971911922,1.1162461798132375,-3.81534466646572,5.7902946788259495
+Conexión intermitente,Conexión del escenario,respuesta_total_teleconsulta_min_al_cierre,3,3,0,-0.9330962526264415,3.1088699542693514,1.7949069049729496,-8.65595734695446,6.789764841701578
+Conexión intermitente,Conexión del escenario,espera_medica_alta_min,3,3,0,-57.539528096302604,23.240507598807394,13.417913318274993,-115.27214946272017,0.19309327011495014
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_alta_min,3,3,0,-57.40675039885684,23.23365363482093,13.41395618032239,-115.12234557486065,0.3088447771469589
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_alta,3,3,0,2.6666666666666665,1.1547005383792515,0.6666666666666666,-0.2017684864996414,5.535101819832974
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_alta,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión del escenario,sin_completar_alta,3,3,0,-3.3333333333333335,0.5773502691896258,0.33333333333333337,-4.767550909916488,-1.8991157567501793
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min,3,3,0,-62.4850857900037,24.71552450226655,14.269514724546385,-123.88185227177334,-1.0883193082340554
+Conexión intermitente,Conexión del escenario,espera_medica_p95_alta_min,3,3,0,-107.08200531324741,23.098147375832475,13.335721605218529,-164.46098428111978,-49.70302634537503
+Conexión intermitente,Conexión del escenario,espera_medica_media_min,3,3,0,-43.940067909640675,7.715797453423597,4.454717736746743,-63.10717133991739,-24.772964479363957
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_media_min,3,3,0,-43.89032240164297,7.8157325605748476,4.512415297762011,-63.305678400321916,-24.47496640296402
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_media,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_media,3,3,0,-1.6666666666666667,1.5275252316519465,0.8819171036881969,-5.461249700263426,2.1279163669300925
+Conexión intermitente,Conexión del escenario,sin_completar_media,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_media_min,3,3,0,-38.473955971855,7.436537824921866,4.293487115057474,-56.94734002760118,-20.000571916108818
+Conexión intermitente,Conexión del escenario,espera_medica_p95_media_min,3,3,0,-61.4865729065005,62.91968816693454,36.32669890050697,-217.7877430935536,94.81459728055259
+Conexión intermitente,Conexión del escenario,espera_medica_baja_min,3,3,0,22.093992116884824,6.575206720245261,3.796197369911038,5.7602731405693675,38.42771109320028
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_baja_min,3,3,0,22.136830300827246,6.646379836997723,3.8372891880271367,5.626307501124188,38.6473531005303
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_baja,3,3,0,-5.333333333333333,1.5275252316519465,0.8819171036881969,-9.127916366930092,-1.5387502997365736
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_baja,3,3,0,5.333333333333333,1.5275252316519465,0.8819171036881969,1.5387502997365736,9.127916366930092
+Conexión intermitente,Conexión del escenario,sin_completar_baja,3,3,0,7.0,1.0,0.5773502691896258,4.51586228824967,9.48413771175033
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min,3,3,0,23.42211921628343,6.96277262890086,4.01995865160207,6.125633150487818,40.71860528207904
+Conexión intermitente,Conexión del escenario,espera_medica_p95_baja_min,3,3,0,37.71456641604539,20.553992960760706,11.866853368816868,-13.344382624831098,88.77351545692188
+Conexión intermitente,Conexión del escenario,espera_medica_alta_min_al_cierre,3,3,0,-57.539528096302604,23.240507598807394,13.417913318274993,-115.27214946272017,0.19309327011495014
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-57.40675039885684,23.23365363482093,13.41395618032239,-115.12234557486065,0.3088447771469589
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_alta_al_cierre,3,3,0,2.6666666666666665,1.1547005383792515,0.6666666666666666,-0.2017684864996414,5.535101819832974
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_alta_al_cierre,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión del escenario,sin_completar_alta_al_cierre,3,3,0,-3.3333333333333335,0.5773502691896258,0.33333333333333337,-4.767550909916488,-1.8991157567501793
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-62.4850857900037,24.71552450226655,14.269514724546385,-123.88185227177334,-1.0883193082340554
+Conexión intermitente,Conexión del escenario,espera_medica_p95_alta_min_al_cierre,3,3,0,-107.08200531324741,23.098147375832475,13.335721605218529,-164.46098428111978,-49.70302634537503
+Conexión intermitente,Conexión del escenario,espera_medica_media_min_al_cierre,3,3,0,-43.940067909640675,7.715797453423597,4.454717736746743,-63.10717133991739,-24.772964479363957
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-43.89032240164297,7.8157325605748476,4.512415297762011,-63.305678400321916,-24.47496640296402
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_media_al_cierre,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_media_al_cierre,3,3,0,-1.6666666666666667,1.5275252316519465,0.8819171036881969,-5.461249700263426,2.1279163669300925
+Conexión intermitente,Conexión del escenario,sin_completar_media_al_cierre,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-38.473955971855,7.436537824921866,4.293487115057474,-56.94734002760118,-20.000571916108818
+Conexión intermitente,Conexión del escenario,espera_medica_p95_media_min_al_cierre,3,3,0,-61.4865729065005,62.91968816693454,36.32669890050697,-217.7877430935536,94.81459728055259
+Conexión intermitente,Conexión del escenario,espera_medica_baja_min_al_cierre,3,3,0,22.093992116884824,6.575206720245261,3.796197369911038,5.7602731405693675,38.42771109320028
+Conexión intermitente,Conexión del escenario,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,22.136830300827246,6.646379836997723,3.8372891880271367,5.626307501124188,38.6473531005303
+Conexión intermitente,Conexión del escenario,consultas_iniciadas_baja_al_cierre,3,3,0,-5.333333333333333,1.5275252316519465,0.8819171036881969,-9.127916366930092,-1.5387502997365736
+Conexión intermitente,Conexión del escenario,pendientes_sin_consulta_baja_al_cierre,3,3,0,5.333333333333333,1.5275252316519465,0.8819171036881969,1.5387502997365736,9.127916366930092
+Conexión intermitente,Conexión del escenario,sin_completar_baja_al_cierre,3,3,0,7.0,1.0,0.5773502691896258,4.51586228824967,9.48413771175033
+Conexión intermitente,Conexión del escenario,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,23.42211921628343,6.96277262890086,4.01995865160207,6.125633150487818,40.71860528207904
+Conexión intermitente,Conexión del escenario,espera_medica_p95_baja_min_al_cierre,3,3,0,37.71456641604539,20.553992960760706,11.866853368816868,-13.344382624831098,88.77351545692188
+Conexión intermitente,Conexión disponible,horizonte_observacion_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,pacientes_llegados,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,pacientes_atendidos,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,consultas_iniciadas,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,pacientes_sin_iniciar_consulta,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión disponible,pacientes_sin_completar,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión disponible,atendidos_pct,3,3,0,-0.9090909090909113,0.9090909090909136,0.5248638810814806,-3.167397919773041,1.3492161015912183
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_min,3,3,0,-6.755607372481921,4.363372608021724,2.5191943498159817,-17.594825818487074,4.083611073523232
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_p90_min,3,3,0,39.41232095034523,16.726427448061852,9.657007389719256,-2.138428256241049,80.96307015693151
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_p95_min,3,3,0,36.58349250096324,19.758634857244985,11.407653153649916,-12.499677480623632,85.66666248255011
+Conexión intermitente,Conexión disponible,muestra_esperas_iniciadas,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_min,3,3,0,-0.8828849230410754,1.271686076156575,0.7342082983936975,-4.041928262329425,2.2761584162472746
+Conexión intermitente,Conexión disponible,espera_acumulada_total_min,3,3,0,-97.11734153451864,139.88546837722305,80.76291282330662,-444.61210885623666,250.3774257871994
+Conexión intermitente,Conexión disponible,espera_medica_acumulada_min,3,3,0,-0.8828849230410872,1.2716860761565747,0.7342082983936974,-4.041928262329437,2.276158416247262
+Conexión intermitente,Conexión disponible,muestra_esperas_medicas,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,carga_medicos_pct,3,3,0,0.013688112777496523,0.02370850679044287,0.013688112777546262,-0.04520708302993139,0.07258330858492444
+Conexión intermitente,Conexión disponible,carga_enfermeros_pct,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,carga_ofrecida_medica,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,concordancia_pct,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,errores_subtriaje,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,tasa_subtriaje_pct,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,sensibilidad_alta_pct,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,muestra_referencia_alta,3,3,0,15.666666666666666,3.511884584284246,2.0275875100994067,6.942661731531539,24.39067160180179
+Conexión intermitente,Conexión disponible,perdida_clasificacion_media,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,teleconsultas_pendientes,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,teleconsultas_sin_enviar,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,teleconsultas_esperando_respuesta,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,teleconsultas_respondidas,3,3,0,3.3333333333333335,1.5275252316519468,0.881917103688197,-0.4612497002634264,7.127916366930093
+Conexión intermitente,Conexión disponible,teleconsultas_en_cola_remota,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,teleconsultas_en_atencion_remota,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,espera_colaremota_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,reintentos_envio,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,demora_envio_teleconsulta_min,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,respuesta_teleconsulta_min,3,3,0,1.4163103042336143,1.2174759538866804,0.7029100697083713,-1.608067625965494,4.440688234432723
+Conexión intermitente,Conexión disponible,respuesta_total_teleconsulta_min,3,3,0,1.4163103042336143,1.2174759538866804,0.7029100697083713,-1.608067625965494,4.440688234432723
+Conexión intermitente,Conexión disponible,horizonte_observacion_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,pacientes_llegados_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,pacientes_atendidos_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,consultas_iniciadas_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,pacientes_sin_iniciar_consulta_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión disponible,pacientes_sin_completar_al_cierre,3,3,0,1.0,1.0,0.5773502691896258,-1.4841377117503303,3.4841377117503303
+Conexión intermitente,Conexión disponible,atendidos_pct_al_cierre,3,3,0,-0.9090909090909113,0.9090909090909136,0.5248638810814806,-3.167397919773041,1.3492161015912183
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_min_al_cierre,3,3,0,-6.755607372481921,4.363372608021724,2.5191943498159817,-17.594825818487074,4.083611073523232
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_p90_min_al_cierre,3,3,0,39.41232095034523,16.726427448061852,9.657007389719256,-2.138428256241049,80.96307015693151
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_p95_min_al_cierre,3,3,0,36.58349250096324,19.758634857244985,11.407653153649916,-12.499677480623632,85.66666248255011
+Conexión intermitente,Conexión disponible,muestra_esperas_iniciadas_al_cierre,3,3,0,-1.0,1.0,0.5773502691896258,-3.4841377117503303,1.4841377117503303
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_min_al_cierre,3,3,0,-0.8828849230410754,1.271686076156575,0.7342082983936975,-4.041928262329425,2.2761584162472746
+Conexión intermitente,Conexión disponible,espera_acumulada_total_min_al_cierre,3,3,0,-97.11734153451864,139.88546837722305,80.76291282330662,-444.61210885623666,250.3774257871994
+Conexión intermitente,Conexión disponible,espera_medica_acumulada_min_al_cierre,3,3,0,-0.8828849230410872,1.2716860761565747,0.7342082983936974,-4.041928262329437,2.276158416247262
+Conexión intermitente,Conexión disponible,muestra_esperas_medicas_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,carga_medicos_pct_al_cierre,3,3,0,0.013688112777496523,0.02370850679044287,0.013688112777546262,-0.04520708302993139,0.07258330858492444
+Conexión intermitente,Conexión disponible,carga_enfermeros_pct_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,carga_ofrecida_medica_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,concordancia_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,errores_subtriaje_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,tasa_subtriaje_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,sensibilidad_alta_pct_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,muestra_referencia_alta_al_cierre,3,3,0,15.666666666666666,3.511884584284246,2.0275875100994067,6.942661731531539,24.39067160180179
+Conexión intermitente,Conexión disponible,perdida_clasificacion_media_al_cierre,3,0,3,,,,,
+Conexión intermitente,Conexión disponible,teleconsultas_pendientes_al_cierre,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,teleconsultas_sin_enviar_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,teleconsultas_esperando_respuesta_al_cierre,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,teleconsultas_respondidas_al_cierre,3,3,0,3.3333333333333335,1.5275252316519468,0.881917103688197,-0.4612497002634264,7.127916366930093
+Conexión intermitente,Conexión disponible,teleconsultas_en_cola_remota_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,teleconsultas_en_atencion_remota_al_cierre,3,3,0,-2.0,1.0,0.5773502691896258,-4.48413771175033,0.48413771175033027
+Conexión intermitente,Conexión disponible,espera_colaremota_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,reintentos_envio_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,demora_envio_teleconsulta_min_al_cierre,3,3,0,0.0,0.0,0.0,0.0,0.0
+Conexión intermitente,Conexión disponible,respuesta_teleconsulta_min_al_cierre,3,3,0,1.4163103042336143,1.2174759538866804,0.7029100697083713,-1.608067625965494,4.440688234432723
+Conexión intermitente,Conexión disponible,respuesta_total_teleconsulta_min_al_cierre,3,3,0,1.4163103042336143,1.2174759538866804,0.7029100697083713,-1.608067625965494,4.440688234432723
+Conexión intermitente,Conexión disponible,espera_medica_alta_min,3,3,0,-57.539528096302604,23.240507598807394,13.417913318274993,-115.27214946272017,0.19309327011495014
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_alta_min,3,3,0,-57.40675039885684,23.23365363482093,13.41395618032239,-115.12234557486065,0.3088447771469589
+Conexión intermitente,Conexión disponible,consultas_iniciadas_alta,3,3,0,2.6666666666666665,1.1547005383792515,0.6666666666666666,-0.2017684864996414,5.535101819832974
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_alta,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión disponible,sin_completar_alta,3,3,0,-3.3333333333333335,0.5773502691896258,0.33333333333333337,-4.767550909916488,-1.8991157567501793
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_alta_min,3,3,0,-62.4850857900037,24.71552450226655,14.269514724546385,-123.88185227177334,-1.0883193082340554
+Conexión intermitente,Conexión disponible,espera_medica_p95_alta_min,3,3,0,-107.08200531324741,23.098147375832475,13.335721605218529,-164.46098428111978,-49.70302634537503
+Conexión intermitente,Conexión disponible,espera_medica_media_min,3,3,0,-43.940067909640675,7.715797453423597,4.454717736746743,-63.10717133991739,-24.772964479363957
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_media_min,3,3,0,-43.89032240164297,7.8157325605748476,4.512415297762011,-63.305678400321916,-24.47496640296402
+Conexión intermitente,Conexión disponible,consultas_iniciadas_media,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_media,3,3,0,-1.6666666666666667,1.5275252316519465,0.8819171036881969,-5.461249700263426,2.1279163669300925
+Conexión intermitente,Conexión disponible,sin_completar_media,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_media_min,3,3,0,-38.473955971855,7.436537824921866,4.293487115057474,-56.94734002760118,-20.000571916108818
+Conexión intermitente,Conexión disponible,espera_medica_p95_media_min,3,3,0,-61.4865729065005,62.91968816693454,36.32669890050697,-217.7877430935536,94.81459728055259
+Conexión intermitente,Conexión disponible,espera_medica_baja_min,3,3,0,22.093992116884824,6.575206720245261,3.796197369911038,5.7602731405693675,38.42771109320028
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_baja_min,3,3,0,22.136830300827246,6.646379836997723,3.8372891880271367,5.626307501124188,38.6473531005303
+Conexión intermitente,Conexión disponible,consultas_iniciadas_baja,3,3,0,-5.333333333333333,1.5275252316519465,0.8819171036881969,-9.127916366930092,-1.5387502997365736
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_baja,3,3,0,5.333333333333333,1.5275252316519465,0.8819171036881969,1.5387502997365736,9.127916366930092
+Conexión intermitente,Conexión disponible,sin_completar_baja,3,3,0,7.0,1.0,0.5773502691896258,4.51586228824967,9.48413771175033
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_baja_min,3,3,0,23.42211921628343,6.96277262890086,4.01995865160207,6.125633150487818,40.71860528207904
+Conexión intermitente,Conexión disponible,espera_medica_p95_baja_min,3,3,0,37.71456641604539,20.553992960760706,11.866853368816868,-13.344382624831098,88.77351545692188
+Conexión intermitente,Conexión disponible,espera_medica_alta_min_al_cierre,3,3,0,-57.539528096302604,23.240507598807394,13.417913318274993,-115.27214946272017,0.19309327011495014
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_alta_min_al_cierre,3,3,0,-57.40675039885684,23.23365363482093,13.41395618032239,-115.12234557486065,0.3088447771469589
+Conexión intermitente,Conexión disponible,consultas_iniciadas_alta_al_cierre,3,3,0,2.6666666666666665,1.1547005383792515,0.6666666666666666,-0.2017684864996414,5.535101819832974
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_alta_al_cierre,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión disponible,sin_completar_alta_al_cierre,3,3,0,-3.3333333333333335,0.5773502691896258,0.33333333333333337,-4.767550909916488,-1.8991157567501793
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_alta_min_al_cierre,3,3,0,-62.4850857900037,24.71552450226655,14.269514724546385,-123.88185227177334,-1.0883193082340554
+Conexión intermitente,Conexión disponible,espera_medica_p95_alta_min_al_cierre,3,3,0,-107.08200531324741,23.098147375832475,13.335721605218529,-164.46098428111978,-49.70302634537503
+Conexión intermitente,Conexión disponible,espera_medica_media_min_al_cierre,3,3,0,-43.940067909640675,7.715797453423597,4.454717736746743,-63.10717133991739,-24.772964479363957
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_media_min_al_cierre,3,3,0,-43.89032240164297,7.8157325605748476,4.512415297762011,-63.305678400321916,-24.47496640296402
+Conexión intermitente,Conexión disponible,consultas_iniciadas_media_al_cierre,3,3,0,1.6666666666666667,1.5275252316519465,0.8819171036881969,-2.1279163669300925,5.461249700263426
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_media_al_cierre,3,3,0,-1.6666666666666667,1.5275252316519465,0.8819171036881969,-5.461249700263426,2.1279163669300925
+Conexión intermitente,Conexión disponible,sin_completar_media_al_cierre,3,3,0,-2.6666666666666665,1.1547005383792515,0.6666666666666666,-5.535101819832974,0.2017684864996414
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_media_min_al_cierre,3,3,0,-38.473955971855,7.436537824921866,4.293487115057474,-56.94734002760118,-20.000571916108818
+Conexión intermitente,Conexión disponible,espera_medica_p95_media_min_al_cierre,3,3,0,-61.4865729065005,62.91968816693454,36.32669890050697,-217.7877430935536,94.81459728055259
+Conexión intermitente,Conexión disponible,espera_medica_baja_min_al_cierre,3,3,0,22.093992116884824,6.575206720245261,3.796197369911038,5.7602731405693675,38.42771109320028
+Conexión intermitente,Conexión disponible,tiempo_hasta_atencion_baja_min_al_cierre,3,3,0,22.136830300827246,6.646379836997723,3.8372891880271367,5.626307501124188,38.6473531005303
+Conexión intermitente,Conexión disponible,consultas_iniciadas_baja_al_cierre,3,3,0,-5.333333333333333,1.5275252316519465,0.8819171036881969,-9.127916366930092,-1.5387502997365736
+Conexión intermitente,Conexión disponible,pendientes_sin_consulta_baja_al_cierre,3,3,0,5.333333333333333,1.5275252316519465,0.8819171036881969,1.5387502997365736,9.127916366930092
+Conexión intermitente,Conexión disponible,sin_completar_baja_al_cierre,3,3,0,7.0,1.0,0.5773502691896258,4.51586228824967,9.48413771175033
+Conexión intermitente,Conexión disponible,espera_acumulada_hasta_consulta_baja_min_al_cierre,3,3,0,23.42211921628343,6.96277262890086,4.01995865160207,6.125633150487818,40.71860528207904
+Conexión intermitente,Conexión disponible,espera_medica_p95_baja_min_al_cierre,3,3,0,37.71456641604539,20.553992960760706,11.866853368816868,-13.344382624831098,88.77351545692188

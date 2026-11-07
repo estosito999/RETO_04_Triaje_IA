@@ -1,0 +1,9 @@
+﻿prueba,distribucion,n,estadistico,p_valor,referencia,interpretacion
+Uniformidad KS,"Uniforme(0,1)",10000,0.008573941413784647,0.4516666568914752,"CDF completamente especificada U(0,1)",Un p pequeño señala discrepancia; no demuestra un defecto por sí solo.
+Media uniforme,"Uniforme(0,1)",10000,0.4981147247314282,,Media 0.5; error estándar teórico 0.00288675,Comparar desviación con error de muestreo.
+Varianza uniforme,"Uniforme(0,1)",10000,0.08362416992477753,,Varianza 1/12 = 0.0833333,La varianza muestral no debe coincidir exactamente con la teórica.
+Autocorrelación lag 1,"Uniforme(0,1)",10000,0.008950364732817186,0.37076759099233525,Correlación 0; p aproximado asintótico,Detecta dependencia lineal de primer orden; no prueba independencia total.
+Rachas sobre 0.5,"Uniforme(0,1)",10000,-1.4560911857328158,0.14536741384573246,"Z aproximado N(0,1)",Busca agrupamientos excesivos o alternancia; diagnóstico aproximado.
+Intervalos de llegada KS,expon,10000,0.010379989613108931,0.22988268334396877,Exponencial media 5 min (12 pacientes/h),"Parámetros fijados de antemano; prueba de la transformación, no del realismo clínico."
+Duración de triaje KS,gamma,10000,0.006667415012301836,0.7629885253681963,"Gamma forma 6, media 4 min","Parámetros fijados de antemano; prueba de la transformación, no del realismo clínico."
+Duración de consulta KS,gamma,10000,0.00828485847897903,0.4959608428998008,"Gamma forma 8, media 16 min","Parámetros fijados de antemano; prueba de la transformación, no del realismo clínico."

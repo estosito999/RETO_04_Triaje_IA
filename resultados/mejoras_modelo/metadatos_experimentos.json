@@ -1,0 +1,31 @@
+{
+  "python": "3.14.7",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "generador": "PCG64",
+  "semillas": [
+    11,
+    42,
+    2026
+  ],
+  "diferencia": "Triaje asistido - FIFO",
+  "intervalo": "Student bilateral 95 %, puntual por métrica; pares completos entre semillas independientes",
+  "costos_clasificacion": [
+    [
+      0.0,
+      5.0,
+      10.0
+    ],
+    [
+      1.0,
+      0.0,
+      3.0
+    ],
+    [
+      2.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "alcance": "Experimento sintético sin validación clínica. No se imputan observaciones ausentes."
+}

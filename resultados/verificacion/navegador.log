@@ -1,0 +1,3 @@
+Cargado: Triaje local y teleconsulta asíncrona
+Paso manual: 1 velocidad: { original: '1.0', nuevo: '2.0', cambio: true }
+{"nombre":"Triaje local y teleconsulta asíncrona","inicial":0,"manual":1,"automatico":3,"detenido":3,"reinicio":0,"velocidad":{"original":"1.0","nuevo":"2.0","cambio":true},"plotly":6,"zip":22210}
