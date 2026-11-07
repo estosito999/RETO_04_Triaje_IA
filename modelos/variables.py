@@ -42,6 +42,7 @@ class Parametros:
     umbral_medio: float = UMBRAL_MEDIO_ASISTIDO
     seguimiento_min: float = 0.0
     fraccion_alta_prioritarios: float = 0.40
+    usar_tablas_frecuencia: bool = False
 
     def __post_init__(self) -> None:
         enteros = (
@@ -83,7 +84,7 @@ class Parametros:
                 raise ValueError(f"El valor de {nombre} debe ser positivo y como máximo {maximo}.")
         if self.umbral_medio >= self.umbral_alto:
             raise ValueError("El umbral medio debe ser menor que el umbral alto.")
-        for nombre in ("generar_hasta_cierre", "conexion_compartida", "esperar_teleconsulta"):
+        for nombre in ("generar_hasta_cierre", "conexion_compartida", "esperar_teleconsulta", "usar_tablas_frecuencia"):
             if type(getattr(self, nombre)) is not bool:
                 raise ValueError(f"El valor de {nombre} debe ser booleano.")
         for nombre, longitud, minimo, maximo in (
@@ -100,6 +101,12 @@ class Parametros:
             if nombre == "medias_consulta_prioridad" and any(v <= 0 for v in valores):
                 raise ValueError("Las medias de consulta por prioridad deben ser positivas.")
             object.__setattr__(self, nombre, tuple(float(v) for v in valores))
+        if self.usar_tablas_frecuencia and (
+            self.perfil_llegadas or self.generar_hasta_cierre or self.medias_consulta_prioridad
+        ):
+            raise ValueError(
+                "Las tablas de frecuencia requieren cupo fijo, sin perfil horario ni medias de consulta por prioridad."
+            )
 
     @property
     def turno_min(self) -> int:

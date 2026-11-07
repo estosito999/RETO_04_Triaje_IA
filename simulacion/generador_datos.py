@@ -3,6 +3,7 @@ from math import ceil
 
 import numpy as np
 
+from modelos.distribuciones import TABLA_INTERARRIBOS, TABLA_SERVICIOS, generar_desde_frecuencias
 from modelos.modelo_matematico import prioridad_referencia
 from modelos.variables import UMBRAL_ALTO_REFERENCIA, UMBRAL_MEDIO_REFERENCIA, Parametros
 
@@ -60,6 +61,8 @@ def generar_trayectoria_conexion(p: Parametros) -> TrayectoriaConexion:
 
 
 def _generar_llegadas(p: Parametros, azar: np.random.Generator) -> np.ndarray:
+    if p.usar_tablas_frecuencia:
+        return generar_desde_frecuencias(TABLA_INTERARRIBOS, azar.random(p.pacientes)).cumsum()
     # Esta rama conserva exactamente el protocolo y los sorteos originales.
     if not p.perfil_llegadas and not p.generar_hasta_cierre:
         return azar.exponential(60 / p.llegadas_por_hora, p.pacientes).cumsum()
@@ -116,8 +119,11 @@ def generar_pacientes(p: Parametros) -> list[PacienteSintetico]:
     senales_b = np.clip(0.8 * indice + 0.1 + casos.normal(0, 0.15, n), 0, 1)
 
     triajes = recursos.gamma(p.forma_triaje, p.triaje_medio_min / p.forma_triaje, n)
-    medias_consulta = np.asarray(p.medias_consulta_prioridad)[estratos] if p.medias_consulta_prioridad else p.duracion_consulta_min
-    consultas = recursos.gamma(p.forma_consulta, medias_consulta / p.forma_consulta, n)
+    if p.usar_tablas_frecuencia:
+        consultas = generar_desde_frecuencias(TABLA_SERVICIOS, recursos.random(n))
+    else:
+        medias_consulta = np.asarray(p.medias_consulta_prioridad)[estratos] if p.medias_consulta_prioridad else p.duracion_consulta_min
+        consultas = recursos.gamma(p.forma_consulta, medias_consulta / p.forma_consulta, n)
     solicita = remoto.random(n) < np.array([0.40, 0.27, 0.12])[estratos]
     conexion = remoto.random(n)
     demora = p.respuesta_remota_min * remoto.uniform(0.7, 1.3, n)

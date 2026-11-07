@@ -1,59 +1,118 @@
+from dataclasses import replace
+from io import BytesIO
+import json
 from pathlib import Path
+from zipfile import ZipFile
 
+import pandas as pd
 from streamlit.testing.v1 import AppTest
 
+import interfaz.exportacion as exportacion
 from interfaz.visualizaciones import vista_turno
 from modelos.variables import ALTA, BAJA, Parametros
+from simulacion.escenarios import PARAMETROS_LABORATORIO, REPETICIONES_LABORATORIO
 from simulacion.generador_datos import PacienteSintetico
-from simulacion.motor import _simular_estrategia
+from simulacion.motor import _simular_estrategia, simular
 
 
 APP = Path(__file__).resolve().parents[1] / "main.py"
 
 
-def test_configuracion_invalida_se_recupera_y_cohorte_vacia_se_visualiza():
-    app = AppTest.from_file(APP, default_timeout=60).run()
-    app.segmented_control(key="modo").set_value("Laboratorio").run()
+def test_sesion_con_ajuste_anterior_vuelve_a_condiciones_fijas():
+    anteriores = replace(PARAMETROS_LABORATORIO, horas_turno=8, perfil_llegadas=(),
+                         llegadas_por_hora=12, medicos=4, pacientes=20, seguimiento_min=30)
+    app = AppTest.from_file(APP, default_timeout=60)
+    app.session_state.modo = "Laboratorio"
+    app.session_state.experimento = simular(anteriores)
+    app.session_state.configuracion_calibrada = anteriores
+    app.session_state.calibracion_aplicada = (anteriores, None)
+    app.session_state.seleccionar_ajuste = True
+    app.session_state.paso = 10
+    app.session_state.reproduciendo = True
+    app.session_state.proximo_paso = 0.0
+    app.run()
+    assert not app.exception
+    assert app.session_state.experimento.parametros == PARAMETROS_LABORATORIO
+    assert app.session_state.paso == 0
+    assert not app.session_state.reproduciendo
+    assert not app.file_uploader
+
+
+def test_nueva_jornada_conserva_condiciones_y_renueva_azar_y_exportacion(monkeypatch):
+    archivos = []
+
+    def capturar_zip(memoria, *args, **kwargs):
+        archivos.append(memoria)
+        return ZipFile(memoria, *args, **kwargs)
+
+    monkeypatch.setattr(exportacion, "ZipFile", capturar_zip)
+    app = AppTest.from_file(APP, default_timeout=60)
+    app.session_state.modo = "Laboratorio"
+    app.run()
+    assert not app.exception
     original = app.session_state.experimento
-    app.text_input(key="perfil_Turno habitual").set_value("1, 2")
-    next(b for b in app.button if b.label == "Preparar experimento").click().run()
-    assert not app.exception
-    assert app.error
-    assert app.session_state.experimento == original
-    app.text_input(key="perfil_Turno habitual").set_value("0,0,0,0,0,0,0,0")
-    app.checkbox(key="continuas_Turno habitual").set_value(True)
-    app.checkbox(key="compartida_Turno habitual").set_value(True)
-    app.number_input(key="seguimiento_Turno habitual").set_value(30.0)
-    next(b for b in app.button if b.label == "Preparar experimento").click().run()
-    assert not app.exception
-    assert app.session_state.experimento.asistido.pacientes.empty
-    assert app.session_state.experimento.asistido.cronologia.minuto.iloc[-1] == 510
-    assert len(app.get("plotly_chart")) == 3
-
-
-def test_repeticiones_diagnosticos_y_ajuste_desde_la_interfaz():
-    app = AppTest.from_file(APP, default_timeout=60).run()
-    app.segmented_control(key="modo").set_value("Laboratorio").run()
-    app.number_input(key="cantidad_replicas").set_value(2)
     app.button(key="ejecutar_replicas").click().run()
     assert not app.exception
-    _, datos, resumen = app.session_state.replicas_resultado
-    assert datos.semilla.nunique() == 2
-    assert resumen.pares_validos.max() == 2
+    parametros, datos, resumen = app.session_state.replicas_resultado
+    assert parametros == PARAMETROS_LABORATORIO
+    assert datos.semilla.nunique() == REPETICIONES_LABORATORIO == 30
+    assert resumen.repeticiones.eq(30).all()
+    jornadas = next(tabla.value for tabla in app.dataframe
+                    if {"Réplica", "Semilla", "Política"}.issubset(tabla.value.columns))
+    assert len(jornadas) == 60
+    assert jornadas.Semilla.nunique() == 30
+    assert set(jornadas["Política"]) == {"FIFO", "Triaje asistido"}
+    assert jornadas["Pacientes ingresados"].le(100).all()
+    with ZipFile(BytesIO(archivos[-1].getvalue())) as archivo:
+        assert "jornadas.csv" in archivo.namelist()
+        assert {"frecuencias_interarribos.csv", "frecuencias_servicio.csv"}.issubset(archivo.namelist())
     app.button(key="validar_azar").click().run()
     assert not app.exception
     assert not app.session_state.diagnostico_azar[1].empty
-    csv = ("llegada_min,duracion_triaje_min,duracion_consulta_min,prioridad_referencia\n"
-           "10,3,14,1\n70,5,18,1\n130,3,13,2\n190,5,15,2\n250,3,12,3\n310,5,20,3\n")
-    app.file_uploader(key="datos_calibracion").upload("turno.csv", csv.encode())
-    app.button(key="ajustar_datos").click().run()
+    descarga = next(b for b in app.download_button if b.label == "Descargar resultados (ZIP)")
+    descarga.click().run()
     assert not app.exception
-    assert app.session_state.ajuste_preparado[1].llegadas_por_hora == .75
-    app.button(key="aplicar_ajuste").click().run()
+    assert app.session_state.experimento is original
+    assert app.session_state.experimento.parametros == PARAMETROS_LABORATORIO
+
+    app.button(key="avanzar").click().run()
     assert not app.exception
-    assert app.session_state.experimento.parametros.llegadas_por_hora == .75
-    assert app.selectbox(key="escenario").value == "Datos ajustados"
-    assert app.number_input(key="llegadas_Datos ajustados").value == .75
+    assert app.session_state.paso == 1
+    ordinal = app.session_state.jornada_laboratorio
+    app.button(key="nueva_jornada").click().run()
+    assert not app.exception
+    actual = app.session_state.experimento
+    semilla = app.session_state.semilla_laboratorio
+    assert 0 <= semilla < 2**32
+    assert semilla != original.parametros.semilla
+    assert actual.parametros == replace(PARAMETROS_LABORATORIO, semilla=semilla)
+    assert app.session_state.jornada_laboratorio == ordinal + 1
+    assert not actual.asistido.pacientes.llegada_min.equals(original.asistido.pacientes.llegada_min)
+    assert app.session_state.paso == 0
+    assert not app.session_state.reproduciendo
+    assert app.session_state.get("replicas_resultado") is None
+    assert app.session_state.get("diagnostico_azar") is None
+    with ZipFile(BytesIO(archivos[-1].getvalue())) as archivo:
+        parametros_exportados = json.loads(archivo.read("parametros.json"))
+        assert parametros_exportados["semilla"] == semilla
+    repetida = simular(actual.parametros)
+    pd.testing.assert_frame_equal(actual.asistido.pacientes, repetida.asistido.pacientes)
+
+    app.radio(key="politica_simulacion").set_value("FIFO").run()
+    assert not app.exception
+    app.button(key="avanzar").click().run()
+    assert not app.exception
+    assert app.session_state.experimento is actual
+    assert app.session_state.semilla_laboratorio == semilla
+
+    app.button(key="ejecutar_replicas").click().run()
+    assert not app.exception
+    nuevos_parametros, nuevos_datos, nuevo_resumen = app.session_state.replicas_resultado
+    assert nuevos_parametros == actual.parametros
+    assert nuevos_datos.semilla.nunique() == 30
+    assert nuevo_resumen.repeticiones.eq(30).all()
+    assert set(nuevos_datos.semilla) != set(datos.semilla)
+    assert not nuevos_datos.valor.equals(datos.valor)
 
 
 def test_reproduccion_no_muestra_reevaluacion_futura():

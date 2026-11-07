@@ -1,5 +1,7 @@
 """Gráficas de un turno simulado y de la comparación entre estrategias."""
 
+from math import ceil, sqrt
+
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -9,7 +11,7 @@ ETAPAS = (
     "En triaje",
     "Espera médica",
     "En consulta",
-    "Atendido",
+    "Salieron",
 )
 TRANSICIONES = (
     "inicio_triaje_min",
@@ -19,17 +21,20 @@ TRANSICIONES = (
 )
 PRIORIDADES = {1: "Alta (1)", 2: "Media (2)", 3: "Baja (3)"}
 COLORES_PRIORIDAD = {1: "#dc5064", 2: "#d18927", 3: "#3282b8"}
-MAX_PUNTOS_POR_ETAPA = 24
+MAX_PUNTOS_POR_ETAPA = 100
 
 
 def vista_turno(pacientes: pd.DataFrame, minuto: float, *, asistido: bool = False,
                 eventos: pd.DataFrame | None = None) -> go.Figure:
-    """Reconstruye una instantánea del flujo a partir de sus marcas temporales."""
-    presentes = pacientes.loc[
+    """Muestra pacientes activos y cuenta las salidas sin borrar su registro."""
+    llegados = pacientes.loc[
         (pacientes["llegada_min"] <= minuto) & (pacientes["estado"] != "no_llego")
-    ].copy()
+    ]
+    completados = llegados["fin_consulta_min"] <= minuto
+    salidas = int(completados.sum())
+    presentes = llegados.loc[~completados].copy()
     presentes["etapa"] = 0
-    for etapa, campo in enumerate(TRANSICIONES, start=1):
+    for etapa, campo in enumerate(TRANSICIONES[:-1], start=1):
         presentes.loc[presentes[campo] <= minuto, "etapa"] = etapa
     asignadas = presentes["prioridad_asignada"].where(presentes["fin_triaje_min"] <= minuto)
     if asistido and eventos is not None and "prioridad_actual" in eventos:
@@ -46,14 +51,19 @@ def vista_turno(pacientes: pd.DataFrame, minuto: float, *, asistido: bool = Fals
     for etapa, nombre in enumerate(ETAPAS):
         grupo = presentes.loc[presentes["etapa"] == etapa].sort_values(["llegada_min", "id_paciente"])
         muestra = grupo.head(MAX_PUNTOS_POR_ETAPA).copy()
+        columnas = max(1, ceil(sqrt(len(muestra))))
+        filas = max(1, ceil(len(muestra) / columnas))
+        paso_x = min(0.16, 0.72 / max(columnas - 1, 1))
+        paso_y = min(0.115, 0.60 / max(filas - 1, 1))
         posiciones = range(len(muestra))
-        muestra["x"] = [etapa + (i % 4 - 1.5) * 0.13 for i in posiciones]
-        muestra["y"] = [0.72 - (i // 4) * 0.115 for i in posiciones]
+        muestra["x"] = [etapa + (i % columnas - (columnas - 1) / 2) * paso_x for i in posiciones]
+        muestra["y"] = [0.73 - (i // columnas) * paso_y for i in posiciones]
         muestra["nombre_etapa"] = nombre
         muestras.append(muestra)
         fig.add_vrect(x0=etapa - 0.46, x1=etapa + 0.46, fillcolor="rgba(80,134,166,0.10)",
                       line_width=0, layer="below")
-        fig.add_annotation(x=etapa, y=0.91, text=str(len(grupo)), showarrow=False, font=dict(size=19))
+        cantidad = salidas if etapa == len(ETAPAS) - 1 else len(grupo)
+        fig.add_annotation(x=etapa, y=0.91, text=str(cantidad), showarrow=False, font=dict(size=19))
 
     puntos = pd.concat(muestras, ignore_index=True)
     categorias = {0: "Sin clasificar", **PRIORIDADES} if asistido else PRIORIDADES
@@ -69,7 +79,7 @@ def vista_turno(pacientes: pd.DataFrame, minuto: float, *, asistido: bool = Fals
         ))
 
     fig.update_xaxes(range=[-0.5, len(ETAPAS) - 0.5], tickvals=list(range(len(ETAPAS))),
-                     ticktext=("Espera de<br>triaje", "En triaje", "Espera<br>médica", "En consulta", "Atendido"),
+                     ticktext=("Espera de<br>triaje", "En triaje", "Espera<br>médica", "En consulta", "Salieron"),
                      showgrid=False, zeroline=False, fixedrange=True)
     fig.update_yaxes(range=[0, 1], visible=False, fixedrange=True)
     fig.update_layout(

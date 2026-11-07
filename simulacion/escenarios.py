@@ -1,4 +1,36 @@
 from modelos.variables import Parametros
+from modelos.distribuciones import TABLA_INTERARRIBOS, TABLA_SERVICIOS, media_frecuencias
+
+PARAMETROS_LABORATORIO = Parametros(
+    semilla=42,
+    pacientes=100,
+    llegadas_por_hora=60 / media_frecuencias(TABLA_INTERARRIBOS),
+    medicos=2,
+    enfermeros=1,
+    duracion_consulta_min=media_frecuencias(TABLA_SERVICIOS),
+    triaje_medio_min=4,
+    forma_triaje=6,
+    forma_consulta=8,
+    horas_turno=24,
+    proporcion_prioritarios=0.30,
+    fraccion_alta_prioritarios=0.40,
+    respuesta_remota_min=45,
+    disponibilidad_conexion=0.85,
+    intervalo_reintento_min=5,
+    generar_hasta_cierre=False,
+    perfil_llegadas=(),
+    usar_tablas_frecuencia=True,
+    medias_consulta_prioridad=(),
+    conexion_compartida=False,
+    especialistas_remotos=0,
+    esperar_teleconsulta=False,
+    deterioro_cada_min=0,
+    seguimiento_min=0,
+    peso_senal_a=0.70,
+    umbral_alto=0.78,
+    umbral_medio=0.54,
+)
+REPETICIONES_LABORATORIO = 30
 
 ESCENARIOS = {
     "Turno habitual": Parametros(),

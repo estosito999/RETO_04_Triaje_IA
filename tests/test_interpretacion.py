@@ -20,11 +20,17 @@ def test_vista_muestra_asignacion_solo_despues_del_triaje_y_excluye_llegada_al_c
     assert sin_clasificar.customdata[0][2] == "Sin clasificar"
     assert sum(len(traza.x) for traza in antes.data) == 1
 
-    despues = vista_turno(resultado.pacientes, 60, asistido=True)
+    despues = vista_turno(resultado.pacientes, 3, asistido=True)
     asignada_baja = next(traza for traza in despues.data if traza.name == "Baja (3)")
     assert list(asignada_baja.text) == ["1"]
     assert list(asignada_baja.customdata[0][1:]) == ["Alta (1)", "Baja (3)"]
-    assert sum(len(traza.x) for traza in despues.data) == resultado.cronologia.llegados.iloc[-1] == 1
+    assert sum(len(traza.x) for traza in despues.data) == 1
+
+    al_cierre = vista_turno(resultado.pacientes, 60, asistido=True)
+    assert sum(len(traza.x) for traza in al_cierre.data) == (
+        resultado.cronologia.llegados.iloc[-1] - resultado.cronologia.atendidos.iloc[-1]
+    ) == 0
+    assert next(anotacion.text for anotacion in al_cierre.layout.annotations if anotacion.x == 4) == "1"
 
     matriz = matriz_clasificacion(resultado)
     assert matriz.loc["Alta", "Baja"] == 1

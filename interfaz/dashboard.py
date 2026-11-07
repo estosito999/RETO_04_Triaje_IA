@@ -1,16 +1,17 @@
-from dataclasses import asdict
+from dataclasses import replace
+from secrets import randbelow
 
 import pandas as pd
 import streamlit as st
 
 from analisis.metricas import comparar, espera_por_prioridad, matriz_clasificacion, clasificacion_por_prioridad
-from interfaz.analisis_avanzado import mostrar_calibracion, mostrar_herramientas
-from interfaz.configuracion import panel
+from interfaz.analisis_avanzado import mostrar_herramientas
+from interfaz.configuracion import mostrar_condiciones, tablas_frecuencias
 from interfaz.exportacion import exportar
 from interfaz.reproduccion import mostrar_reproduccion, reiniciar_reproduccion
 from interfaz.visualizaciones import comparar_esperas, cronologia, vista_turno
-from modelos.variables import PRIORIDADES, Parametros
-from simulacion.escenarios import ESCENARIOS
+from modelos.variables import PRIORIDADES
+from simulacion.escenarios import PARAMETROS_LABORATORIO
 from simulacion.motor import Experimento, simular
 from simulacion.generador_datos import generar_trayectoria_conexion
 
@@ -53,7 +54,8 @@ PLOTLY = {"displaylogo": False}
 
 def mostrar_simulacion(exp: Experimento) -> None:
     st.header("C · Simulación")
-    estrategia = st.radio("Política en pantalla", ("FIFO", "Triaje asistido"), index=1, horizontal=True)
+    estrategia = st.radio("Política en pantalla", ("FIFO", "Triaje asistido"), index=1, horizontal=True,
+                          key="politica_simulacion")
     asistido = estrategia == "Triaje asistido"
     resultado = exp.asistido if asistido else exp.referencia
     conexion = generar_trayectoria_conexion(exp.parametros) if exp.parametros.conexion_compartida else None
@@ -73,8 +75,10 @@ def mostrar_simulacion(exp: Experimento) -> None:
             st.caption("Conexión compartida del centro: " + ("disponible" if conexion.conectada(cuadro.minuto) else "interrumpida"))
         st.plotly_chart(vista_turno(resultado.pacientes, cuadro.minuto, asistido=asistido, eventos=resultado.eventos),
                         width="stretch", config=PLOTLY, alt="Pacientes en cada etapa y prioridad de cola en ese instante")
+        st.caption("Cada punto es un paciente que sigue dentro del circuito local. Al terminar su consulta "
+                   "desaparece de la animación; su salida sigue sumando en el contador y en los resultados.")
         st.caption(
-            "El color representa la prioridad de cola en este instante, incluidas las reevaluaciones. El gris indica "
+            "El color representa la prioridad asignada en la evaluación. El gris indica "
             "que falta terminar la evaluación local. El puntero muestra la referencia inicial y la prioridad de cola."
             if asistido else
             "FIFO atiende por orden de entrada a la cola médica. Los colores muestran la referencia sintética "
@@ -110,29 +114,34 @@ def mostrar_simulacion(exp: Experimento) -> None:
 def mostrar() -> None:
     st.caption("LABORATORIO DE SIMULACIÓN · RETO 04")
     st.title("Triaje local y teleconsulta asíncrona")
-    st.write("Un experimento de colas, clasificación computacional y conectividad en un centro de salud ficticio.")
-    parametros = panel()
+    st.write("Con el mismo personal y los mismos pacientes, ¿qué cambia al atender por llegada o por prioridad?")
     estado = st.session_state
+    estado.setdefault("semilla_laboratorio", PARAMETROS_LABORATORIO.semilla)
+    estado.setdefault("jornada_laboratorio", 1)
+
+    def nueva_jornada() -> None:
+        # Sortea otra semilla de 32 bits, excluyendo la jornada actual.
+        estado.semilla_laboratorio = (estado.semilla_laboratorio + 1 + randbelow(2**32 - 1)) % 2**32
+        estado.jornada_laboratorio += 1
+
+    st.button("Nueva jornada aleatoria", key="nueva_jornada", on_click=nueva_jornada)
+    parametros = replace(PARAMETROS_LABORATORIO, semilla=estado.semilla_laboratorio)
     anterior = estado.get("experimento")
-    if anterior is not None and (
-        not hasattr(anterior.parametros, "seguimiento_min")
+    if anterior is None or (
+        anterior.parametros != parametros
         or "prioridad_actual" not in anterior.asistido.eventos
     ):
-        estado.experimento = simular(Parametros(**asdict(anterior.parametros)))
+        estado.experimento = simular(parametros)
+        for clave in ("replicas_resultado", "diagnostico_azar", "configuracion_calibrada",
+                      "seleccionar_ajuste", "calibracion_aplicada", "ajuste_preparado"):
+            estado.pop(clave, None)
         reiniciar_reproduccion()
-    if parametros is not None or "experimento" not in estado:
-        try:
-            estado.experimento = simular(parametros if parametros is not None else next(iter(ESCENARIOS.values())))
-            reiniciar_reproduccion()
-        except ValueError as error:
-            st.error(f"No se pudo preparar la corrida. {error}")
-            if "experimento" not in estado:
-                st.stop()
     exp = estado.experimento
-    st.caption(f"Corrida preparada · {exp.parametros.horas_turno} h de llegadas · {len(exp.asistido.pacientes)} pacientes generados "
-               f"· {exp.parametros.seguimiento_min:g} min de seguimiento · Semilla {exp.parametros.semilla}")
-    intro, simulacion, analisis, cierre = st.tabs(
-        ("A · Introducción", "C · Simulación", "D · Análisis", "E · Conclusiones"), default="C · Simulación",
+    st.caption(f"Jornada {estado.jornada_laboratorio} · {parametros.horas_turno} horas · "
+               f"Máximo {parametros.pacientes} pacientes · Semilla {parametros.semilla} · Condiciones fijas")
+    intro, condiciones, simulacion, analisis, cierre = st.tabs(
+        ("A · Introducción", "B · Condiciones fijas", "C · Simulación", "D · Análisis", "E · Conclusiones"),
+        default="C · Simulación",
     )
     with intro:
         st.header("A · Introducción")
@@ -142,11 +151,19 @@ def mostrar() -> None:
         st.write("Las solicitudes remotas se procesan en paralelo al turno. La conexión condiciona el envío, "
                  "mientras el clasificador local sigue disponible. Si no hay conexión, el mensaje se conserva "
                  "localmente y su envío se reintenta durante el turno.")
-        st.write("En configuración puedes activar demanda por hora, tiempos por prioridad, cortes compartidos y "
-                 "especialistas limitados. La reevaluación es una regla educativa de promoción en la cola. "
-                 "La opción de esperar una respuesta remota mantiene al médico ocupado hasta recibirla.")
+        st.write("Se observa un hospital durante 24 horas, con hasta 100 pacientes del día, un puesto de "
+                 "enfermería y dos médicos simultáneos con relevos de personal. Los tiempos entre llegadas "
+                 "son cortos y las consultas más largas, para estudiar la formación y el vaciado de colas. "
+                 "Las dos políticas reciben los mismos pacientes y duraciones; "
+                 "la teleconsulta funciona en paralelo, sin retener al médico.")
+        st.write("Cada jornada tiene llegadas y servicios aleatorios. Nueva jornada aleatoria genera otros "
+                 "pacientes; Comparar 30 jornadas permite estudiar la variación entre réplicas. Al llegar a "
+                 "medianoche se cuentan los pendientes, sin representar un cierre del hospital. Las "
+                 "condiciones completas están en B · Condiciones fijas.")
         st.info("Experimento educativo con pacientes y señales ficticios. Las prioridades y métricas tienen significado "
                 "dentro de este modelo. La herramienta carece de validación clínica.")
+    with condiciones:
+        mostrar_condiciones(exp.parametros)
     with simulacion:
         mostrar_simulacion(exp)
     resultados = comparar(exp)
@@ -168,8 +185,12 @@ def mostrar() -> None:
         if rho >= 1:
             st.info(f"La carga nominal es {rho:.2f}: la demanda de servicio supera o iguala la capacidad médica "
                     "media si ese flujo se mantuviera. El cupo y el turno finito limitan la acumulación observada.")
-        st.caption("La carga nominal usa el servicio local y la demanda configurada. No incluye el tiempo adicional "
-                   "de retener médicos esperando teleconsulta ni representa ocupación medida.")
+        demanda_media = exp.parametros.llegadas_por_hora
+        capacidad = exp.parametros.medicos * 60 / exp.parametros.duracion_consulta_min
+        st.caption(f"Mientras ingresan pacientes, el ritmo medio es {demanda_media:.2f} pacientes/h frente a "
+                   f"{capacidad:.2f} consultas/h de capacidad médica nominal. Al llegar al cupo de 100 cesan "
+                   "las nuevas llegadas del experimento y se sigue atendiendo hasta el corte de 24 horas. "
+                   "La ocupación se mide con los eventos de esta jornada.")
         st.plotly_chart(comparar_esperas(esperas), width="stretch", config=PLOTLY)
         etiquetas_espera = {"estrategia": "Política", "prioridad_referencia": "Referencia inicial",
             "llegados": "Llegados", "pacientes": "Consultas iniciadas", "pendientes_sin_consulta": "Sin iniciar",
@@ -208,25 +229,13 @@ def mostrar() -> None:
                      "sensibilidad_pct": "Sensibilidad (%)", "subtriaje_pct": "Subtriaje (%)",
                      "sobretriaje_pct": "Sobretriaje (%)"}).drop(columns="prioridad_referencia"),
                      hide_index=True, width="stretch", alt="Sensibilidad y tipos de error para cada prioridad")
-        st.caption("La clasificación compara la asignación inicial con la referencia inicial, antes de las reevaluaciones. "
+        st.caption("La clasificación compara la prioridad asignada con la referencia sintética de cada paciente. "
                    "Costo educativo: alta→media 5, alta→baja 10, media→alta 1, media→baja 3, "
                    "baja→alta 2 y baja→media 1; aciertos 0. Son pesos relativos sin calibración clínica.")
         adicionales = mostrar_herramientas(exp.parametros)
         if exp.parametros.conexion_compartida:
             conexion = generar_trayectoria_conexion(exp.parametros)
             adicionales["conexion_compartida"] = pd.DataFrame({"minuto": conexion.tiempos, "conectada": conexion.estados})
-        ajustados = mostrar_calibracion(exp.parametros)
-        if ajustados is not None:
-            estado.experimento = simular(ajustados)
-            estado.configuracion_calibrada = ajustados
-            estado.seleccionar_ajuste = True
-            estado.calibracion_aplicada = (ajustados, estado.ajuste_preparado[2])
-            reiniciar_reproduccion()
-            st.rerun()
-        ajuste = estado.get("calibracion_aplicada")
-        if ajuste and ajuste[0] == exp.parametros:
-            adicionales["ajuste_parametros"] = ajuste[1]
-            st.caption("Esta corrida usa parámetros ajustados al CSV aportado.")
         exportar(exp.parametros, {"comparacion": tabla, "esperas": esperas,
                                  "esperas_al_cierre": espera_por_prioridad(exp, al_cierre=True),
                                  "clasificacion_por_prioridad": clases,
@@ -234,13 +243,14 @@ def mostrar() -> None:
                                  "pacientes_fifo": exp.referencia.pacientes, "pacientes_asistido": exp.asistido.pacientes,
                                  "eventos_fifo": exp.referencia.eventos, "eventos_asistido": exp.asistido.eventos,
                                  "turno_fifo": exp.referencia.cronologia, "turno_asistido": exp.asistido.cronologia,
-                                 **adicionales},
+                                 **tablas_frecuencias(), **adicionales},
                  "triaje")
     with cierre:
         st.header("E · Conclusiones")
         referencia = resultados.loc["FIFO"]
         asistido = resultados.loc["Triaje asistido"]
-        st.write(f"Llegaron {int(asistido.pacientes_llegados)} pacientes de los {len(exp.asistido.pacientes)} generados. "
+        st.write(f"Ingresaron {int(asistido.pacientes_llegados)} pacientes, con un cupo máximo de "
+                 f"{exp.parametros.pacientes} durante {exp.parametros.horas_turno} horas. "
                  f"FIFO completó {int(referencia.pacientes_atendidos)} consultas y triaje asistido completó "
                  f"{int(asistido.pacientes_atendidos)}. Quedaron {int(asistido.teleconsultas_pendientes)} "
                  "teleconsultas pendientes con la política asistida.")

@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 
+from modelos.distribuciones import TABLA_INTERARRIBOS, TABLA_SERVICIOS, media_frecuencias
 from modelos.variables import PRIORIDADES, Parametros
 from simulacion.motor import Experimento, Resultado
 
@@ -34,6 +35,10 @@ def _carga(inicios: pd.Series, fines: pd.Series, turno: float, recursos: int) ->
 
 def carga_ofrecida(p: Parametros) -> float:
     """Carga nominal durante llegadas; no ocupación medida ni equilibrio garantizado."""
+    if p.usar_tablas_frecuencia:
+        tasa = 60 / media_frecuencias(TABLA_INTERARRIBOS)
+        servicio = media_frecuencias(TABLA_SERVICIOS)
+        return float(tasa * servicio / (60 * p.medicos))
     perfil = getattr(p, "perfil_llegadas", ())
     tasa = p.llegadas_por_hora * (float(np.mean(perfil)) if perfil else 1)
     medias = getattr(p, "medias_consulta_prioridad", ())
