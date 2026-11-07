@@ -1,0 +1,28 @@
+[
+  {
+    "prueba": "configuracion_ampliada",
+    "estado": "ready",
+    "tablas": [
+      12,
+      6,
+      12,
+      6,
+      3,
+      3
+    ]
+  },
+  {
+    "prueba": "reproduccion",
+    "estado": "ready"
+  },
+  {
+    "prueba": "repeticiones",
+    "estado": "ready",
+    "tabla_resumen": true
+  },
+  {
+    "prueba": "diagnosticos",
+    "estado": "ready",
+    "tabla_diagnosticos": true
+  }
+]

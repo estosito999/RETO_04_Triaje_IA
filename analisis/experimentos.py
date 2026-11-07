@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import platform
 from tempfile import TemporaryDirectory
+from typing import cast
 
 import numpy as np
 import pandas as pd
@@ -40,19 +41,19 @@ def _mediciones(p: Parametros, escenario: str, condicion: str) -> list[dict]:
     comparacion = comparar(exp)
     for al_cierre in (False, True):
         sufijo = "_al_cierre" if al_cierre else ""
-        for fila in espera_por_prioridad(exp, al_cierre=al_cierre).itertuples():
-            prioridad = PRIORIDADES[fila.prioridad_referencia].lower()
+        for fila in espera_por_prioridad(exp, al_cierre=al_cierre).to_dict("records"):
+            prioridad = PRIORIDADES[fila["prioridad_referencia"]].lower()
             campos = {
-                f"espera_medica_{prioridad}_min": fila.espera_medica_min,
-                f"tiempo_hasta_atencion_{prioridad}_min": fila.tiempo_hasta_atencion_min,
-                f"consultas_iniciadas_{prioridad}": fila.pacientes,
-                f"pendientes_sin_consulta_{prioridad}": fila.pendientes_sin_consulta,
-                f"sin_completar_{prioridad}": fila.sin_completar,
-                f"espera_acumulada_hasta_consulta_{prioridad}_min": fila.espera_acumulada_hasta_consulta_min,
-                f"espera_medica_p95_{prioridad}_min": fila.espera_medica_p95_min,
+                f"espera_medica_{prioridad}_min": fila["espera_medica_min"],
+                f"tiempo_hasta_atencion_{prioridad}_min": fila["tiempo_hasta_atencion_min"],
+                f"consultas_iniciadas_{prioridad}": fila["pacientes"],
+                f"pendientes_sin_consulta_{prioridad}": fila["pendientes_sin_consulta"],
+                f"sin_completar_{prioridad}": fila["sin_completar"],
+                f"espera_acumulada_hasta_consulta_{prioridad}_min": fila["espera_acumulada_hasta_consulta_min"],
+                f"espera_medica_p95_{prioridad}_min": fila["espera_medica_p95_min"],
             }
             for campo, valor in campos.items():
-                comparacion.loc[fila.estrategia, campo+sufijo] = valor
+                comparacion.loc[fila["estrategia"], campo+sufijo] = valor
     parametros_json = json.dumps(asdict(p), ensure_ascii=False, sort_keys=True)
     return [{"escenario": escenario, "semilla": p.semilla, "condicion": condicion,
              "estrategia": estrategia, "metrica": metrica, "valor": valor, "parametros_json": parametros_json}
@@ -103,6 +104,7 @@ def resumen_pareado(datos: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("El resumen solo admite las políticas FIFO y Triaje asistido.")
     filas = []
     for clave, grupo in datos.groupby(claves, sort=False, dropna=False):
+        clave = cast(tuple[str, str, str], clave)
         semillas = datos.loc[(datos.escenario == clave[0]) & (datos.condicion == clave[1]), "semilla"].unique()
         pares = grupo.pivot(index="semilla", columns="estrategia", values="valor").reindex(
             index=semillas, columns=["FIFO", "Triaje asistido"])
@@ -116,8 +118,8 @@ def resumen_pareado(datos: pd.DataFrame) -> pd.DataFrame:
         filas.append(dict(zip(claves, clave)) | {
             "repeticiones": len(pares), "pares_validos": n, "pares_faltantes": len(pares)-n,
             "diferencia_media": media, "desviacion_diferencias": sd, "error_estandar": ee,
-            "ic95_inferior": media-margen if margen is not None else None,
-            "ic95_superior": media+margen if margen is not None else None})
+            "ic95_inferior": media-margen if media is not None and margen is not None else None,
+            "ic95_superior": media+margen if media is not None and margen is not None else None})
     return pd.DataFrame(filas, columns=columnas)
 
 

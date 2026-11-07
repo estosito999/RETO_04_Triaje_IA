@@ -11,8 +11,16 @@ def _lista_numeros(texto: str) -> tuple[float, ...]:
 def panel() -> Parametros | None:
     with st.sidebar:
         st.header("B · Configuración")
-        escenario = st.selectbox("Escenario", list(ESCENARIOS))
-        base = ESCENARIOS[escenario]
+        escenarios = dict(ESCENARIOS)
+        if "configuracion_calibrada" in st.session_state:
+            escenarios["Datos ajustados"] = st.session_state.configuracion_calibrada
+        if st.session_state.pop("seleccionar_ajuste", False):
+            for clave in list(st.session_state):
+                if clave.endswith("_Datos ajustados"):
+                    del st.session_state[clave]
+            st.session_state.escenario = "Datos ajustados"
+        escenario = st.selectbox("Escenario", list(escenarios), key="escenario")
+        base = escenarios[escenario]
         with st.form(f"configuracion_{escenario}"):
             semilla = st.number_input("Semilla", 0, 2**32 - 1, base.semilla, key=f"semilla_{escenario}")
             pacientes = st.number_input("Cantidad de pacientes generados", 1, 500, base.pacientes,
@@ -44,12 +52,12 @@ def panel() -> Parametros | None:
                 medias = st.text_input("Consulta media por prioridad: alta, media, baja (min)",
                                        ", ".join(map(str, base.medias_consulta_prioridad)), key=f"medias_{escenario}",
                                        help="Tres medias separadas por comas. Vacío: media común del panel principal.")
-                media_triaje = st.number_input("Evaluación de enfermería media (min)", 0.1, 60.0,
+                media_triaje = st.number_input("Evaluación de enfermería media (min)", min(0.1, float(base.triaje_medio_min)), 240.0,
                                                float(base.triaje_medio_min), key=f"media_triaje_{escenario}")
-                forma_triaje = st.number_input("Forma Gamma de enfermería", 0.1, 100.0,
+                forma_triaje = st.number_input("Forma Gamma de enfermería", min(0.1, float(base.forma_triaje)), 10000.0,
                                                float(base.forma_triaje), key=f"forma_triaje_{escenario}",
                                                help="A igual media, una forma mayor reduce la variabilidad.")
-                forma_consulta = st.number_input("Forma Gamma de medicina", 0.1, 100.0,
+                forma_consulta = st.number_input("Forma Gamma de medicina", min(0.1, float(base.forma_consulta)), 10000.0,
                                                  float(base.forma_consulta), key=f"forma_consulta_{escenario}")
             with st.expander("Conexión, especialistas y seguimiento"):
                 compartida = st.checkbox("Cortes de conexión compartidos por todo el centro", base.conexion_compartida,

@@ -35,7 +35,13 @@ def mostrar_herramientas(p: Parametros) -> dict[str, pd.DataFrame]:
         guardado = st.session_state.get("replicas_resultado")
         if guardado and guardado[0] == p:
             _, datos, resumen = guardado
-            st.dataframe(resumen, hide_index=True, width="stretch", alt="Diferencias entre políticas con intervalos de confianza")
+            visible = resumen.drop(columns=["escenario", "condicion"]).assign(
+                metrica=resumen.metrica.str.replace("_", " ").str.capitalize(),
+            ).rename(columns={"metrica": "Métrica", "repeticiones": "Repeticiones",
+                "pares_validos": "Pares válidos", "pares_faltantes": "Pares sin observación",
+                "diferencia_media": "Diferencia media", "desviacion_diferencias": "Desviación de diferencias",
+                "error_estandar": "Error estándar", "ic95_inferior": "IC 95 % inferior", "ic95_superior": "IC 95 % superior"})
+            st.dataframe(visible, hide_index=True, width="stretch", alt="Diferencias entre políticas con intervalos de confianza")
             st.caption("Diferencia = triaje asistido − FIFO. En tiempos y errores, un valor negativo indica una reducción. "
                        "Los grupos sin observaciones quedan vacíos; revisa el número de pares válidos de cada métrica.")
             st.download_button("Descargar diferencias e intervalos", resumen.to_csv(index=False).encode("utf-8-sig"),
@@ -51,7 +57,10 @@ def mostrar_herramientas(p: Parametros) -> dict[str, pd.DataFrame]:
             st.session_state.diagnostico_azar = (p.semilla, diagnosticar_azar(p.semilla, n=10000))
         diagnostico = st.session_state.get("diagnostico_azar")
         if diagnostico and diagnostico[0] == p.semilla:
-            st.dataframe(diagnostico[1], hide_index=True, width="stretch", alt="Diagnósticos estadísticos de PCG64 y sus distribuciones")
+            st.dataframe(diagnostico[1].rename(columns={"prueba": "Prueba", "distribucion": "Distribución",
+                         "n": "Muestra", "estadistico": "Estadístico", "p_valor": "Valor p",
+                         "referencia": "Referencia", "interpretacion": "Interpretación"}),
+                         hide_index=True, width="stretch", alt="Diagnósticos estadísticos de PCG64 y sus distribuciones")
             st.caption("Un valor p pequeño es una señal para investigar; varios contrastes también pueden producir "
                        "alertas por azar. No se eligen semillas para hacer aprobar los contrastes.")
             tablas["diagnostico_azar"] = diagnostico[1]
@@ -85,7 +94,9 @@ def mostrar_calibracion(p: Parametros) -> Parametros | None:
         ajuste = st.session_state.get("ajuste_preparado")
         if ajuste and ajuste[0] == p:
             _, ajustado, tabla = ajuste
-            st.dataframe(tabla, hide_index=True, width="stretch", alt="Parámetros ajustados y tamaños de muestra")
+            st.dataframe(tabla.rename(columns={"parametro": "Parámetro", "estimacion": "Estimación",
+                         "n": "Muestra", "metodo": "Método", "observacion": "Observación"}),
+                         hide_index=True, width="stretch", alt="Parámetros ajustados y tamaños de muestra")
             st.caption("El ajuste describe el CSV aportado. El clasificador sigue siendo una regla; esta operación no entrena una IA.")
             st.download_button("Descargar parámetros ajustados", json.dumps(asdict(ajustado), ensure_ascii=False, indent=2),
                                "parametros_ajustados.json", "application/json", key="descargar_ajuste", on_click="ignore")

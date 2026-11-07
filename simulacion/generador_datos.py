@@ -45,7 +45,7 @@ def generar_trayectoria_conexion(p: Parametros) -> TrayectoriaConexion:
     disponibilidad = p.disponibilidad_conexion
     if disponibilidad in (0, 1):
         return TrayectoriaConexion(np.array([0.0]), np.array([bool(disponibilidad)]))
-    azar = np.random.default_rng(np.random.SeedSequence(p.semilla, spawn_key=(5,)))
+    azar = np.random.Generator(np.random.PCG64(np.random.SeedSequence(p.semilla, spawn_key=(5,))))
     conectado = bool(azar.random() < disponibilidad)
     tiempos, estados = [0.0], [conectado]
     for _ in range(MAX_TRANSICIONES_CONEXION):
@@ -95,14 +95,14 @@ def generar_intentos_conexion(p: Parametros, paciente: PacienteSintetico) -> np.
     intento es Bernoulli independiente; no se modela una cobertura geográfica.
     La secuencia finita cubre también el seguimiento posterior al turno.
     """
-    azar = np.random.default_rng(np.random.SeedSequence(p.semilla, spawn_key=(4, paciente.id_paciente)))
+    azar = np.random.Generator(np.random.PCG64(np.random.SeedSequence(p.semilla, spawn_key=(4, paciente.id_paciente))))
     adicionales = ceil(p.horizonte_min / p.intervalo_reintento_min)
     return np.concatenate(([paciente.sorteo_conexion], azar.random(adicionales)))
 
 
 def generar_pacientes(p: Parametros) -> list[PacienteSintetico]:
     semillas = np.random.SeedSequence(p.semilla).spawn(4)
-    llegadas, casos, recursos, remoto = (np.random.default_rng(s) for s in semillas)
+    llegadas, casos, recursos, remoto = (np.random.Generator(np.random.PCG64(s)) for s in semillas)
     tiempos_llegada = _generar_llegadas(p, llegadas)
     n = len(tiempos_llegada)
 

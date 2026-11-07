@@ -1,10 +1,12 @@
 from collections.abc import Generator
 from dataclasses import dataclass
+from typing import Any, cast
 
 import numpy as np
 import pandas as pd
 from simpy import Environment, PriorityResource, Resource
 from simpy.events import Event
+from simpy.resources.resource import PriorityRequest, SortedQueue
 
 from modelos.modelo_matematico import prioridad_asistida
 from modelos.variables import ALTA, PASO_VISUAL_MIN, Parametros
@@ -53,7 +55,7 @@ class Experimento:
     asistido: Resultado
 
 
-def _registro(paciente: PacienteSintetico) -> dict[str, object]:
+def _registro(paciente: PacienteSintetico) -> dict[str, Any]:
     return {
         "id_paciente": paciente.id_paciente,
         "llegada_min": paciente.llegada_min,
@@ -124,7 +126,7 @@ def _simular_estrategia(p: Parametros, cohorte: list[PacienteSintetico], asistid
                 return
             yield reloj.timeout(p.intervalo_reintento_min)
 
-    def reevaluar(paciente: PacienteSintetico, solicitud: Event) -> Generator[Event, object, None]:
+    def reevaluar(paciente: PacienteSintetico, solicitud: PriorityRequest) -> Generator[Event, object, None]:
         """Promueve la solicitud pendiente conservando su antigüedad de entrada.
 
         PriorityResource no interrumpe consultas. Se actualiza la clave y se
@@ -139,7 +141,7 @@ def _simular_estrategia(p: Parametros, cohorte: list[PacienteSintetico], asistid
             fila["reevaluaciones"] += 1
             solicitud.priority = fila["prioridad_actual"]
             solicitud.key = (solicitud.priority, *solicitud.key[1:])
-            consultas.queue.sort(key=lambda pendiente: pendiente.key)
+            cast(SortedQueue, consultas.queue).sort(key=lambda pendiente: pendiente.key)
             registrar(paciente, "reevaluacion")
 
     def atender(paciente: PacienteSintetico) -> Generator[Event, object, None]:
@@ -158,7 +160,7 @@ def _simular_estrategia(p: Parametros, cohorte: list[PacienteSintetico], asistid
             registros[paciente.id_paciente]["prioridad_actual"] = orden
         with consultas.request(priority=orden) as recurso:
             if asistido and p.deterioro_cada_min:
-                reloj.process(reevaluar(paciente, recurso))
+                reloj.process(reevaluar(paciente, cast(PriorityRequest, recurso)))
             yield recurso
             registrar(paciente, "inicio_consulta")
             respuesta = None

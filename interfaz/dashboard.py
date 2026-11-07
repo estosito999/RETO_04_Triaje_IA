@@ -1,3 +1,5 @@
+from dataclasses import asdict
+
 import pandas as pd
 import streamlit as st
 
@@ -7,7 +9,7 @@ from interfaz.configuracion import panel
 from interfaz.exportacion import exportar
 from interfaz.reproduccion import mostrar_reproduccion, reiniciar_reproduccion
 from interfaz.visualizaciones import comparar_esperas, cronologia, vista_turno
-from modelos.variables import PRIORIDADES
+from modelos.variables import PRIORIDADES, Parametros
 from simulacion.escenarios import ESCENARIOS
 from simulacion.motor import Experimento, simular
 from simulacion.generador_datos import generar_trayectoria_conexion
@@ -111,6 +113,13 @@ def mostrar() -> None:
     st.write("Un experimento de colas, clasificación computacional y conectividad en un centro de salud ficticio.")
     parametros = panel()
     estado = st.session_state
+    anterior = estado.get("experimento")
+    if anterior is not None and (
+        not hasattr(anterior.parametros, "seguimiento_min")
+        or "prioridad_actual" not in anterior.asistido.eventos
+    ):
+        estado.experimento = simular(Parametros(**asdict(anterior.parametros)))
+        reiniciar_reproduccion()
     if parametros is not None or "experimento" not in estado:
         try:
             estado.experimento = simular(parametros if parametros is not None else next(iter(ESCENARIOS.values())))
@@ -209,6 +218,8 @@ def mostrar() -> None:
         ajustados = mostrar_calibracion(exp.parametros)
         if ajustados is not None:
             estado.experimento = simular(ajustados)
+            estado.configuracion_calibrada = ajustados
+            estado.seleccionar_ajuste = True
             estado.calibracion_aplicada = (ajustados, estado.ajuste_preparado[2])
             reiniciar_reproduccion()
             st.rerun()

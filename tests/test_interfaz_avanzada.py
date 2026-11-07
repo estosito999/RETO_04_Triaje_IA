@@ -50,6 +50,8 @@ def test_repeticiones_diagnosticos_y_ajuste_desde_la_interfaz():
     app.button(key="aplicar_ajuste").click().run()
     assert not app.exception
     assert app.session_state.experimento.parametros.llegadas_por_hora == .75
+    assert app.selectbox(key="escenario").value == "Datos ajustados"
+    assert app.number_input(key="llegadas_Datos ajustados").value == .75
 
 
 def test_reproduccion_no_muestra_reevaluacion_futura():

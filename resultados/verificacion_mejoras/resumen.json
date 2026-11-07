@@ -1,0 +1,32 @@
+{
+  "reto": "RETO_04_Triaje_IA",
+  "python": "3.14.7",
+  "versiones": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "simpy": "4.1.2",
+    "streamlit": "1.67.0"
+  },
+  "pytest": {
+    "aprobadas": 83,
+    "segundos": 19.2
+  },
+  "tipos": "sin errores",
+  "dependencias": "sin conflictos",
+  "interfaz_en_ejecucion": "ready",
+  "generador": "PCG64",
+  "experimento": {
+    "repeticiones_por_escenario": 30,
+    "escenarios": 4,
+    "condiciones_conexion": 2,
+    "mediciones": 53760,
+    "comparaciones_pareadas": 896,
+    "diagnosticos": 8
+  },
+  "aplicacion_existente": {
+    "puerto": 8502,
+    "salud": "ok"
+  },
+  "alcance": "Modelo educativo; sin datos reales ni validación clínica."
+}
