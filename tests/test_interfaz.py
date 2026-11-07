@@ -5,6 +5,7 @@ from streamlit.testing.v1 import AppTest
 
 def test_panel_y_reproduccion():
     app = AppTest.from_file(Path(__file__).resolve().parents[1] / "main.py", default_timeout=45).run()
+    app.segmented_control(key="modo").set_value("Laboratorio").run()
     assert not app.exception
     assert len(app.get("plotly_chart")) == 3
     assert app.session_state.paso == 0

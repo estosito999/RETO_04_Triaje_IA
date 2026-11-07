@@ -1,0 +1,109 @@
+{
+  "presentacion": {
+    "diapositivas": 5,
+    "duracion_guion_seg": 180,
+    "contenidos": [
+      "Problema y oportunidad",
+      "Solución tecnológica",
+      "Arquitectura y funcionamiento",
+      "Viabilidad financiera e implementación",
+      "Impacto esperado y escalabilidad"
+    ]
+  },
+  "fuente_bases": {
+    "archivo": "C:\\Users\\duico\\Downloads\\Bases del Hackathon STLC.pdf",
+    "seccion": "7.2",
+    "paginas": [
+      4,
+      5
+    ],
+    "maximo_diapositivas": 5
+  },
+  "pruebas": {
+    "aprobadas": 108,
+    "segundos": 39.95,
+    "tipos": "sin errores",
+    "interfaz_http": "cinco capítulos, presupuesto y laboratorio: ready"
+  },
+  "revision_visual_navegador": {
+    "completada": false,
+    "motivo": "El control de pantalla se detuvo al no poder verificar con confianza la URL del navegador."
+  },
+  "presupuesto_ilustrativo": {
+    "centros": 1,
+    "meses": 12,
+    "moneda": "BOB",
+    "desarrollo_central_bs": 6400.0,
+    "equipo_por_centro_bs": 0.0,
+    "datos_por_centro_bs": 960.0,
+    "revision_por_centro_bs": 1600.0,
+    "capacitacion_por_centro_bs": 320.0,
+    "despliegue_por_centro_bs": 2880.0,
+    "despliegue_total_bs": 2880.0,
+    "inversion_base_bs": 9280.0,
+    "contingencia_bs": 1392.0,
+    "inversion_inicial_bs": 10672.0,
+    "inversion_inicial_por_centro_bs": 10672.0,
+    "operacion_fija_mensual_bs": 200.0,
+    "operacion_variable_mensual_bs": 100.0,
+    "operacion_mensual_bs": 300.0,
+    "operacion_total_horizonte_bs": 3600.0,
+    "total_horizonte_bs": 14272.0,
+    "costo_por_centro_bs": 14272.0,
+    "supuestos": {
+      "centros": 1,
+      "meses": 12,
+      "horas_desarrollo": 80.0,
+      "tarifa_tecnica_bs": 80.0,
+      "equipo_por_centro_bs": 3500.0,
+      "reutilizar_equipo": true,
+      "horas_datos_por_centro": 12.0,
+      "horas_revision_por_centro": 16.0,
+      "tarifa_revision_bs": 100.0,
+      "horas_capacitacion_por_centro": 4.0,
+      "operacion_fija_mensual_bs": 200.0,
+      "operacion_por_centro_mensual_bs": 100.0,
+      "contingencia_pct": 15.0
+    },
+    "notas": [
+      "Supuestos ilustrativos para un piloto retrospectivo; no son precios ni cotizaciones verificadas.",
+      "La operación mensual representa soporte del laboratorio, no la operación de un servicio sanitario.",
+      "No incluye atención médica real ni conectividad de una operación clínica real.",
+      "Las integraciones clínicas, los trámites y los requisitos regulatorios no están estimados.",
+      "Reutilizar equipo supone que los centros ya disponen de equipo adecuado y disponible.",
+      "El desarrollo central se paga una sola vez; el despliegue variable se repite por centro.",
+      "La contingencia se aplica solo a la inversión base inicial; no al gasto operativo mensual.",
+      "Los costos por centro son un prorrateo aritmético, no evidencia de rentabilidad ni economías verificadas."
+    ],
+    "alcance": "Piloto retrospectivo del laboratorio con importes ilustrativos, sin evaluación de rentabilidad."
+  },
+  "versiones": {
+    "streamlit": "1.67.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "simpy": "4.1.2",
+    "plotly": "7.1.0"
+  },
+  "python": "3.14.7",
+  "entregables": {
+    "pptx": "pitch_entregable/UMBRAL_pitch_ejecutivo.pptx",
+    "pdf": "pitch_entregable/UMBRAL_pitch_ejecutivo.pdf",
+    "diapositivas": 5,
+    "notas_segundos": [
+      25,
+      30,
+      40,
+      40,
+      45
+    ],
+    "pdf_texto_seleccionable": false,
+    "revision_visual_exportaciones": "cinco renders finales PPTX y cinco páginas PDF revisados por agente autor",
+    "descargas_en_streamlit": "ready"
+  },
+  "revision_visual_exportaciones": "Las cinco páginas finales del PDF fueron inspeccionadas también por el agente principal, sin cortes ni solapamientos.",
+  "instancia_temporal": "cerrada",
+  "aplicacion_existente": {
+    "puerto": 8502,
+    "salud": "ok"
+  }
+}

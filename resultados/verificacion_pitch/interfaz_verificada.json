@@ -1,0 +1,36 @@
+[
+  {
+    "diapositiva": "01 · Oportunidad",
+    "estado": "ready",
+    "graficas": 0,
+    "excepciones": 0
+  },
+  {
+    "diapositiva": "02 · Solución",
+    "estado": "ready",
+    "graficas": 0,
+    "excepciones": 0
+  },
+  {
+    "diapositiva": "03 · Arquitectura",
+    "estado": "ready",
+    "graficas": 2,
+    "excepciones": 0
+  },
+  {
+    "diapositiva": "04 · Viabilidad",
+    "estado": "ready",
+    "graficas": 0,
+    "excepciones": 0
+  },
+  {
+    "diapositiva": "05 · Impacto y escala",
+    "estado": "ready",
+    "graficas": 1,
+    "excepciones": 0
+  },
+  {
+    "vista": "Laboratorio",
+    "estado": "ready"
+  }
+]

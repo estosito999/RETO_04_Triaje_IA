@@ -13,6 +13,7 @@ APP = Path(__file__).resolve().parents[1] / "main.py"
 
 def test_configuracion_invalida_se_recupera_y_cohorte_vacia_se_visualiza():
     app = AppTest.from_file(APP, default_timeout=60).run()
+    app.segmented_control(key="modo").set_value("Laboratorio").run()
     original = app.session_state.experimento
     app.text_input(key="perfil_Turno habitual").set_value("1, 2")
     next(b for b in app.button if b.label == "Preparar experimento").click().run()
@@ -32,6 +33,7 @@ def test_configuracion_invalida_se_recupera_y_cohorte_vacia_se_visualiza():
 
 def test_repeticiones_diagnosticos_y_ajuste_desde_la_interfaz():
     app = AppTest.from_file(APP, default_timeout=60).run()
+    app.segmented_control(key="modo").set_value("Laboratorio").run()
     app.number_input(key="cantidad_replicas").set_value(2)
     app.button(key="ejecutar_replicas").click().run()
     assert not app.exception

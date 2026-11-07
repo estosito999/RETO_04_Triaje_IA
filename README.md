@@ -4,6 +4,35 @@ Simulación educativa de un centro ficticio. Compara medicina FIFO con una cola
 por prioridad asignada mediante reglas. Usa pacientes y señales sintéticos:
 no es una IA entrenada ni una herramienta con validación clínica.
 
+## Pitch ejecutivo de tres minutos
+
+La aplicación abre en **Pitch**. Sus cinco diapositivas siguen los puntos de la
+sección 7.2 de las bases STLC: oportunidad, solución, arquitectura, viabilidad,
+e impacto y escala. **Anterior**, **Siguiente** y la navegación superior cambian
+de diapositiva. **Laboratorio** conserva la simulación completa y sus controles.
+
+El anexo para preguntas contiene fórmulas, límites y respuestas de defensa; no
+añade diapositivas a la presentación. [PITCH.md](PITCH.md) incluye el guion de
+180 segundos, la correspondencia con las bases y la preparación de la demo.
+Las bases permiten hasta siete minutos de demo y tres de preguntas; este guion
+mantiene los tres minutos solicitados para la exposición ejecutiva.
+
+La evidencia usa 30 turnos con parámetros originales por escenario, semillas
+42–71 y diferencias pareadas con intervalos del 95 %. Los controles de la demo
+no cambian ese experimento. Se presentan también pendientes de prioridad baja
+y errores de clasificación: no se afirma un aumento demostrado de capacidad.
+
+El presupuesto de viabilidad es un **supuesto ilustrativo para evaluación
+retrospectiva**, editable y sin cotizaciones: un centro con equipo reutilizado
+y 12 meses suma Bs 10672 de inversión inicial y Bs 300 mensuales, total Bs 14272.
+No estima ingresos, retorno ni atención médica real. El anexo muestra cada base
+de cálculo, exclusiones y proyección por centros; esta última es un prorrateo,
+no una validación de escala técnica ni rentabilidad.
+
+Cuando están presentes, los archivos de `pitch_entregable` se descargan desde la
+presentación: PDF de cinco diapositivas y PowerPoint editable. Usan el escenario
+y presupuesto base, no los cambios interactivos realizados durante una sesión.
+
 ## Ejecución
 
 Desde esta carpeta, con Python 3.11 o superior:
